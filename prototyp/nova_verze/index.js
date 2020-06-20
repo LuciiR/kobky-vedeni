@@ -137,8 +137,7 @@ function posunPanacka(event)
             }
     }  
     if(event.code === "ArrowRight") {
-           pohyb("x", "+") 
-           /* panacek.x += panacek.krok;
+           panacek.x += panacek.krok;
             let indexSloupce = Math.floor((panacek.x + panacek.sirka) / mapy.velikostCtverecku);
             let indexRadku = Math.floor (panacek.y / mapy.velikostCtverecku);
             if (mapy.poleMapy[mapy.mistnost][indexRadku][indexSloupce] === 1) {
@@ -149,8 +148,8 @@ function posunPanacka(event)
                 indexRadku = Math.floor((panacek.y + panacek.vyska) / mapy.velikostCtverecku);
                 if (mapy.poleMapy[mapy.mistnost][indexRadku][indexSloupce] === 1) {
                     panacek.x -= panacek.krok;
-                } 
-            }*/
+                } */
+            }
     }
     umisti(panacek); // umístní toho panáčka do té stránky
 }
