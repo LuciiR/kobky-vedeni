@@ -4,7 +4,8 @@
  <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
 
 
-  <div class = "otazka"> </div>
+  <div class = "navod" v-show="navod.viditelne"> </div>
+  <!--<div class = "otazka" v-show="otazka.viditelne"> </div> -->
 
   </div>
 </template>
@@ -32,6 +33,11 @@ export default {
 
       },
 
+      navod: {
+        viditelne : false
+
+      },
+
       mapy: {
         odsazeniX: 0, 
         odsazeniY: 0, 
@@ -43,7 +49,7 @@ export default {
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2],
+            [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 2],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -86,7 +92,12 @@ export default {
         if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 1) {
           this.panacek.x += this.panacek.krok
           console.log("Došlo ke srazka");
-        }  
+        } else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+          this.panacek.x += this.panacek.krok
+          this.navod.viditelne = true;
+          
+          console.log("došel si k pruvodci")
+        }
       } 
 
       if(event.code === "ArrowUp") {
@@ -95,6 +106,12 @@ export default {
         let indexRadku = Math.floor(this.panacek.y / this.mapy.velikostCtverecku);
         if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce]=== 1) {
           this.panacek.y += this.panacek.krok
+        }
+        else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+          this.panacek.y += this.panacek.krok
+          this.navod.viditelne = true;
+          
+          console.log("došel si k pruvodci")
         }
       } 
 
@@ -107,6 +124,12 @@ export default {
             this.panacek.y -= this.panacek.krok
             console.log("Došlo ke srazka");
         }
+        else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+           this.panacek.y -= this.panacek.krok
+           this.navod.viditelne = true;
+          
+          console.log("došel si k pruvodci")
+        }
       }  
 
       if(event.code === "ArrowRight") {
@@ -117,6 +140,13 @@ export default {
             this.panacek.x -= this.panacek.krok
             console.log("Došlo ke srazka");
         } 
+        else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+          this.panacek.x -= this.panacek.krok
+          this.navod.viditelne = true;
+          
+          console.log("došel si k pruvodci")
+        }
+        
       }
 
       this.umisti(this.panacek); 
@@ -147,7 +177,7 @@ export default {
     height: 720px;
 }
 
-.otazka {
+.navod {
   position: absolute;
   left: 108px;
   top: 108px;
