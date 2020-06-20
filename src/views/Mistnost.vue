@@ -1,6 +1,9 @@
 <template>
   <div class="pozadi">
  <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
+
+  <div class = "otazka"> </div>
+
   </div>
 </template>
 
@@ -16,7 +19,7 @@ export default {
         vyska: 70,
         element: null,
         pocetZivotu:5,
-        krok: 18
+        krok: 72
       },
       mapy: {
         odsazeniX: 0, 
@@ -121,5 +124,17 @@ export default {
     height: 720px;
 }
 
+.otazka {
+  position: absolute;
+  left: 108px;
+  top: 108px;
+  width: 432px;
+  min-height: 432px;
+  background-color:burlywood;
+  border:#8B4513 8px solid;
+  border-radius: 10px;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+
+}
 
 </style>
