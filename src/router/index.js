@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Uvodka from '../views/Uvodka.vue'
+import Mistnost from '../views/Mistnost.vue'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,12 @@ Vue.use(VueRouter)
     path: '/uvodka',
     name: 'Uvodka',
     component: Uvodka
+  },
+
+  {
+    path: '/mistnost',
+    name: 'Mistnost',
+    component: Mistnost
   },
 ]
 
