@@ -1,6 +1,8 @@
 <template>
   <div class="pozadi">
  <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
+ <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
+
 
   <div class = "otazka"> </div>
 
@@ -21,6 +23,15 @@ export default {
         pocetZivotu:5,
         krok: 72
       },
+      pruvodce: {
+        x:0,
+        y:0,
+        sirka:70,
+        vyska:70,
+        element:null,
+
+      },
+
       mapy: {
         odsazeniX: 0, 
         odsazeniY: 0, 
@@ -46,11 +57,16 @@ export default {
   mounted() {
     document.addEventListener("keydown", this.posunPanacka);
     this.panacek.element = document.querySelector("#panacek")
+    this.pruvodce.element = document.querySelector("#pruvodce")
 
     this.panacek.x = 1 * this.mapy.velikostCtverecku;
     this.panacek.y = 1 * this.mapy.velikostCtverecku;
 
+    this.pruvodce.x = 11 * this.mapy.velikostCtverecku;
+    this.pruvodce.y = 4 * this.mapy.velikostCtverecku;
+
     this.umisti(this.panacek)
+    this.umisti(this.pruvodce)
   },
 
   methods: {
@@ -58,6 +74,8 @@ export default {
       objekt.element.style.left =`${this.mapy.odsazeniX + objekt.x}px`; 
       objekt.element.style.top =`${this.mapy.odsazeniY + objekt.y}px`;
     },
+    
+
 
     posunPanacka(event) {
       if(event.code === "ArrowLeft"){
@@ -102,6 +120,7 @@ export default {
       }
 
       this.umisti(this.panacek); 
+      this.umisti(this.pruvodce)
     }
   }
 }
@@ -113,6 +132,10 @@ export default {
 
 #panacek {
     position: absolute;
+}
+
+#pruvodce {
+  position: absolute;
 }
 
 .pozadi {
