@@ -208,7 +208,7 @@ otazky: [
     // místnost - prohra
     { 
         id: 20,
-        uvitani: '"Vítej učedníku! Jistě se těšíš na dobrodružnou cestu do našeho podzemí, ovšem pozor, slávy a bohatství u nás nedosáhneš mečem či kouzlem, ale svými vědomostmi! Připrav se proto na nejrůznější záludné otázky, které ti obyvatelé těchto kobek budou klást. V každé místnosti, kterou navštívíš, tě bude čekat stvoření s otázkou, která ho moc trápí. Když správně odpovíš, odmění tě zlaťákem, ovšem když se spleteš, nejspíš tě vezme něčím po hlavě a to trochu zabolí! Dostaneš se k němu jednoduše pomocí šipek na klávesnici. Ovšem pozor, některé místnosti jsou trochu záludné a asi se trochu projdeš. Tak hodně zdaru a vzhůru dolů do podzemí!"',
+        uvitani: '"..."',
     },
     // místnost - výhra
     { 
