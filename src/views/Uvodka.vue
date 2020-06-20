@@ -6,7 +6,10 @@
 
 
 <img class="nazev" v-bind:src="require(`./../assets/nazev.png`)" alt='nazev'> 
+
+<router-link to = '/mistnost'>
 <img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko'> 
+</router-link>
 
 
 </div>
@@ -23,7 +26,7 @@ export default {
 .nazev {
     position: absolute;
      left:340px;
-     top: 150px;
+     top: 144px;
     width: 429px;
     height: 250px;
     
@@ -32,10 +35,11 @@ export default {
 
 .hrat {
    position: absolute;
-   top: 580px;
-   left:430px;
-   
-    
+   bottom: 36px;
+   left:468px;
+   width: 144px;
+   height: 72px;
+
 
 }
 
