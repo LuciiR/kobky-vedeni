@@ -153,7 +153,8 @@ export default {
   top: 108px;
   width: 432px;
   min-height: 432px;
-  background-color:burlywood;
+  background-color: sandybrown;
+  /*background: #8B4513 linear-gradient(to bottom, #fdce68, rgb(170, 126, 43));*/
   border:#8B4513 8px solid;
   border-radius: 10px;
   box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
