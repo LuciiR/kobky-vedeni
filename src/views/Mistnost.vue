@@ -94,26 +94,24 @@ export default {
     umisti(panacek); 
 }
 
-    
 
-ulozDoXY(panacek,6,1); 
-document.addEventListener("keydown", posunPanacka);
-
+    ulozDoXY(panacek,6,1); 
+    document.addEventListener("keydown", posunPanacka);
 
 
 
+  },
 
-
-
-
-
-
-
-
-
+  data() {
+    return {
+      
+    }
   }
 
+
 }
+
+
 </script>
 
 
