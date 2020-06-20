@@ -1,0 +1,13 @@
+body {
+    /*background-image: url('obrazky/pokusna_mistnost.png');*/
+    background-image: url('obrazky/m_4_box_png.png');
+    background-repeat: no-repeat;
+    margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+#panacek {
+    position: absolute;
+}
+
