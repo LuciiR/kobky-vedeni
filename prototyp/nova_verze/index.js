@@ -15,8 +15,8 @@ let mapy = {
     odsazeniX: 0, // kvůli tomu, že mapa může být kdekoliv v prostoru
     odsazeniY: 0, // kvůli tomu, že mapa může být kdekoliv v prostoru
     velikostCtvereckuX: 72, // velikost jednoho čtverečku na šířku
-    velikostCtvereckuY :72, // velikost jednoho čtverečku na šířku
-    mistnosti: 0, // daná místnost
+    velikostCtvereckuY :72, // velikost jednoho čtverečku na výšku
+    mistnost: 0, // daná místnost
     poleMapy: [
       
         [
@@ -59,8 +59,8 @@ let mapy = {
 
 function umisti(objekt) // umistit objekt(panáčky) na pozici stránky 
 {
-	objekt.element.style.left = `${mapy.odsazeniX + objekt.x}px`; // odsazení - zajistí změnu souřadného systému
-	objekt.element.style.top = `${mapy.odsazeniY + objekt.y}px`;
+	objekt.element.style.left =`${mapy.odsazeniX + objekt.x}px`; // odsazení - zajistí změnu souřadného systému
+	objekt.element.style.top =`${mapy.odsazeniY + objekt.y}px`;
 }
 
 
@@ -87,30 +87,30 @@ function ulozDoXY(objekt, x, y) // umístnění panáču na dané mapě
 
 function posunPanacka(event) 
 {
-    if (event.code === "ArrowLeft") {
+    if(event.code === "ArrowLeft"){
         panacek.x -= panacek.dx; // o kolik se panáček pohne 
         let indexSloupce = Math.floor(panacek.x / mapy.velikostCtvereckuX); // index sloupce se rovná = výpočet pozice panáčka X / mapy- veliksot jednoho čtverečku na šířku (x)
         let indexRadku = Math.floor(panacek.y / mapy.velikostCtvereckuY); // math.floor - "opatření" kdyby se velikost políčka x,y změnila (kdyby to nebyla 72px)
-        if (mapy.poleMapy[mapy.mistnosti] [indexRadku] [indexSloupce] === 1) {
-            panacek.x = (indexSloupce + 1) * mapy.velikostCtvereckuX + 1;  // jednička je tam proto - aby se o px posunul - a nebyl uplně u zdi
+        if(mapy.poleMapy[mapy.mistnosti][indexRadku][indexSloupce] === 1) {
+            panacek.x =(indexSloupce + 1)* mapy.velikostCtvereckuX + 1;  // jednička je tam proto - aby se o px posunul - a nebyl uplně u zdi
             console.log("Došlo ke srazka");
              //doraz ke steně - narazili jsme na stěnu  // sloupce +1 (protože se indexuje od 0 - aby tam bylo fyzicky 1)   -- > 
            
-            } else {
+            }else{
             indexRadku = Math.floor((panacek.y + panacek.vyska) / mapy.velikostCtvereckuY);
-            if (mapy.poleMapy[mapy.mistnosti] [indexRadku] [indexSloupce] === 1)  {
+            if (mapy.poleMapy[mapy.mistnosti][indexRadku][indexSloupce] === 1){
                 panacek.x += panacek.dx;
             }
         }
      } else if (event.code === "ArrowUp") {
         panacek.y -= panacek.dy;
-        let indexSloupce = Math.floor(panacek.x / mapy.velikost_ctverecku_x);
+        let indexSloupce = Math.floor(panacek.x / mapy.velikostCtvereckuX);
         let indexRadku = Math.floor(panacek.y / mapy.velikostCtvereckuY);
-        if (mapy.poleMapy[mapy.mistnosti] [indexRadku] [indexSloupce] === 1) 
-            panacek.y = (indexRadku +1 ) * mapy.velikostCtvereckuY + 1;
+        if (mapy.poleMapy[mapy.mistnosti][indexRadku][indexSloupce]=== 1) 
+            panacek.y =(indexRadku +1) * mapy.velikostCtvereckuY + 1;
         else {
-            indexSloupce = Math.floor((panacek.x + panacek.sirka) / mapy.velikostCtvereckuX);
-            if (mapy.poleMapy[mapy.mistnosti] [indexRadku] [indexSloupce] === 1) {
+            indexSloupce = Math.floor((panacek.x + panacek.sirka)/mapy.velikostCtvereckuX);
+            if (mapy.poleMapy[mapy.mistnosti][indexRadku][indexSloupce]=== 1) {
                 panacek.y += panacek.dy;
             }
         }
@@ -120,12 +120,12 @@ function posunPanacka(event)
         let indexSloupce = Math.floor (panacek.x / mapy.velikostCtvereckuX);
         let indexRadku = Math.floor ((panacek.y + panacek.vyska) / mapy.velikostCtvereckuY);
 
-        if (mapy.poleMapy[mapy.mistnosti][indexRadku] [indexSloupce] === 1) {
+        if (mapy.poleMapy[mapy.mistnosti][indexRadku][indexSloupce]=== 1) {
             panacek.y = indexRadku * mapy.velikostCtvereckuY - panacek.vyska - 1;
             console.log("Došlo ke srazka");
         } else {
             indexSloupce = Math.floor ((panacek.x + panacek.sirka) / mapy.velikostCtvereckuX);
-            if (mapy.poleMapy[mapy.mistnosti] [indexRadku] [indexSloupce] === 1) {
+            if (mapy.poleMapy[mapy.mistnosti][indexRadku][indexSloupce] === 1) {
                 panacek.y -= panacek.dy;
             }
         }
@@ -133,7 +133,7 @@ function posunPanacka(event)
             panacek.x += panacek.dx;
             let indexSloupce = Math.floor((panacek.x + panacek.sirka) / mapy.velikostCtvereckuX);
             let indexRadku = Math.floor (panacek.y / mapy.velikostCtvereckuY);
-            if (mapy.poleMapy [mapy.mistnosti] [indexRadku] [indexSloupce] === 1) {
+            if (mapy.poleMapy[mapy.mistnosti][indexRadku][indexSloupce] === 1) {
                 panacek.x = indexSloupce * mapy.velikostCtvereckuX - panacek.sirka - 1;
                 console.log("Došlo ke srazka");
             } else { 
