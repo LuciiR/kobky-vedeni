@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  
 
 }
 </script>
@@ -25,12 +26,10 @@ export default {
 
 .nazev {
     position: absolute;
-     left:340px;
-     top: 144px;
-    width: 429px;
-    height: 250px;
-    
-
+    left:324px;
+    top: 180px;
+    width: 432px;
+    height: 288px;
 }
 
 .hrat {
@@ -39,17 +38,21 @@ export default {
    left:468px;
    width: 144px;
    height: 72px;
-
-
 }
 
 .pozadi {
     position: relative;
-    left:130px;
+    margin: 0 auto;
     background-image:url("./../assets/mistnosti/mistnost.png");
     background-repeat: no-repeat;
     width: 1080px;
     height: 720px;
+}
+
+.hrat:hover {
+    transform: scale(1.2);
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
 
