@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div class="pozadi">
+ <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
   </div>
 </template>
 
@@ -104,6 +104,18 @@ export default {
 
   data() {
     return {
+    panacek: { 
+      x: 0,
+      y: 0,
+      sirka: 70,
+      vyska: 70,
+      element: document.querySelector("#panacek"),
+      pocetZivotu:5,
+      krok: 18
+
+	
+},
+
       
     }
   }
@@ -115,6 +127,21 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+
+
+#panacek {
+    position: absolute;
+}
+
+.pozadi {
+  position: relative;
+    left:130px;
+    background-image:url("./../assets/mistnosti/pravidla.png");
+    background-repeat: no-repeat;
+    width: 1080px;
+    height: 720px;
+}
+
 
 </style>
