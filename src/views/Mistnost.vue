@@ -138,10 +138,10 @@ export default {
     klik(index) {
         if (index === this.otazka.data.spravna) {
             console.log('yes');
-            this.otazka.odpoved = this.otazka.data.reakceYes
+            this.otazka.odpoved = this.otazka.data.reakceYes;
         } else {
             console.log('no');
-            this.otazka.odpoved = this.otazka.data.reakceNo
+            this.otazka.odpoved = this.otazka.data.reakceNo;
         }
         
     },
@@ -150,7 +150,7 @@ export default {
       if (this.aktualniMistnostIndex === 0) {
         this.navod.viditelne = false; 
       } else {
-        this.otazka.viditelne = true;
+        this.otazka.viditelne = false;
       }
       this.aktualniMistnostIndex++;
       this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
@@ -162,11 +162,8 @@ export default {
       this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
       this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
 
-     
-      let nahodneCislo = Math.floor(Math.random()*this.aktualniMistnost.cisloMax) + this.aktualniMistnost.cisloMin;
+        let nahodneCislo = Math.floor(Math.random()*this.aktualniMistnost.cisloMax) + this.aktualniMistnost.cisloMin;
       this.otazka.data = Otazky.otazky[nahodneCislo];
-
-      
 
 
       this.umisti(this.panacek)
