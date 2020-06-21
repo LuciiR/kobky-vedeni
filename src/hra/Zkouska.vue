@@ -76,7 +76,18 @@ export default {
     }
 
 }
+
+// let otazka;
+// otazka = Math.floor(Math.random() * 5 + 1);
+
+
+
+
+
 </script>
+
+
+
 
 <style>
 
