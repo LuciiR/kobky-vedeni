@@ -2,7 +2,7 @@ export default {
 
     mistnost: [ { 
             
-                nazev: 0,
+                
                 pozadi: 'pravidla',
                 pozicePanacka:{
                     x: 1,
@@ -17,7 +17,7 @@ export default {
             },
             {
             
-                nazev: 1,
+                
                 pozadi: 'kuchyne_box',
                 pozicePanacka:{
                     x: 12,
@@ -32,7 +32,7 @@ export default {
             },
             {
             
-                nazev: 2,
+                
                 pozadi: 'posilovna_box',
                 pozicePanacka:{
                     x: 1,
