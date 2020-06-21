@@ -219,9 +219,9 @@ export default {
     top: 102px;
     width: 432px;
     min-height: 432px;
-    background-color: sandybrown;
+    background-color: #ffe6cc;
     /*background: #8B4513 linear-gradient(to bottom, #fdce68, rgb(170, 126, 43));*/
-    border:#8B4513 8px solid;
+    border: #c27d58 8px solid;
     border-radius: 10px;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
 
@@ -233,6 +233,7 @@ export default {
     font-family: 'Balsamiq Sans', cursive;
     /*font-family:'Courier New', Courier, monospace;*/
     text-align: justify;
+    color: #663300;
 
 }
 
