@@ -4,7 +4,10 @@
  <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
 
 
-  <div class = "navod" v-show="navod.viditelne"> </div>
+  <div class = "navod" v-show="navod.viditelne"> 
+   
+
+  </div>
   <!--<div class = "otazka" v-show="otazka.viditelne"> </div> -->
 
   </div>
@@ -12,6 +15,7 @@
 
 
 <script>
+
 export default {
   data() {
     return {
