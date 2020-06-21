@@ -1,9 +1,10 @@
 export default {
 
-    mistnost: [ 
-        
-            { 
-                pozadi: 'pravidla',
+    velikostCtverecku : 72,
+
+    mistnost: [ { 
+            
+                pozadi:'pravidla',
                 pozicePanacka:{
                     x: 1,
                     y:4
