@@ -12,7 +12,12 @@
     <div class = "otazka" v-if="otazka.viditelne" > 
       <p> {{otazka.data.uvitani}}</p>
       <p> {{otazka.data.otazka}}</p>
-      <p> {{otazka.data.odpovedi}}</p>
+
+      <ul class="odpovedi" v-for="(odpoved, index) in otazka.data.odpovedi" v-bind:key="index">
+			<li> 
+			   <a href="#"> {{odpoved}} </a>
+			</li>
+		</ul>
 
 
       </div> 

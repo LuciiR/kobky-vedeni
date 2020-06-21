@@ -10,7 +10,7 @@ export default {
             odpovedi: [
                 'hřib smrkový',
                 'bedla obecná',
-                'hřib satan<',
+                'hřib satan',
             ],
             spravna: 0,
             reakceYes: '"Skvělé! To bude super bašta pro celé podzemí! Díky za pomoc."',
