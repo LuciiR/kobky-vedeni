@@ -9,7 +9,7 @@ export default {
             otazka: 'která z těchto hub je nejedlá:"',
             odpovedi: [
                 'hřib smrkový',
-                '<li>bedla obecná',
+                'bedla obecná',
                 'hřib satan<',
             ],
             spravna: 0,
