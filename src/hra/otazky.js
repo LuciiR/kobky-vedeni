@@ -5,16 +5,16 @@ export default {
         // 1.místnost - kuchyně
         { 
             id: 1,
-            uvitani: '<p>"To jsem rád, že tě vidím! Určitě mi pomůžeš s receptem. Takže, potřebuji zjistit, ',
-            otazka: 'která z těchto hub je nejedlá:"</p>',
+            uvitani: '"To jsem rád, že tě vidím! Určitě mi pomůžeš s receptem. Takže, potřebuji zjistit, ',
+            otazka: 'která z těchto hub je nejedlá:"',
             odpovedi: [
-                '<li>hřib smrkový</li>',
-                '<li>bedla obecná</li>',
-                '<li>hřib satan</li>',
+                'hřib smrkový',
+                '<li>bedla obecná',
+                'hřib satan<',
             ],
             spravna: 0,
-            reakceYes: '<p>"Skvělé! To bude super bašta pro celé podzemí! Díky za pomoc."</p>',
-            reakceNo: '<p>"Mno, raději se podívám do kuchařky, to se mi nezdá,… hmmm…, že ty chceš, aby nám bylo všem špatně?!? Mazej pryč, než tě vezmu válečkem!"</p>',
+            reakceYes: '"Skvělé! To bude super bašta pro celé podzemí! Díky za pomoc."',
+            reakceNo: '"Mno, raději se podívám do kuchařky, to se mi nezdá,… hmmm…, že ty chceš, aby nám bylo všem špatně?!? Mazej pryč, než tě vezmu válečkem!"',
         },
         { 
             id: 2,
