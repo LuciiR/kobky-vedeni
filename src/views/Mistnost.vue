@@ -4,7 +4,7 @@
  <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
 
 
-  <div class = "navod" v-show="navod.viditelne"> 
+  <div class = "navod" v-show="navod.viditelne" v-html= "navod.text"> 
    
 
   </div>
@@ -15,6 +15,7 @@
 
 
 <script>
+import Hra from "@/hra/hra.js"
 
 export default {
   data() {
@@ -38,7 +39,8 @@ export default {
       },
 
       navod: {
-        viditelne : false
+        viditelne : false,
+        text:Hra.otazky [15].uvitani
 
       },
 
@@ -191,6 +193,13 @@ export default {
   border:#8B4513 8px solid;
   border-radius: 10px;
   box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+ .navod >>> p {
+ padding: 20px;
+ font-size: 20px;
+
 
 }
 
