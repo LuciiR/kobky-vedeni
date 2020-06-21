@@ -54,9 +54,9 @@ export default {
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 1],
             [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 1, 3, 0, 2],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -164,17 +164,16 @@ export default {
 
 <style scoped>
 
-
 #panacek {
     position: absolute;
 }
 
 #pruvodce {
-  position: absolute;
+    position: absolute;
 }
 
 .pozadi {
-  position: relative;
+    position: relative;
     margin: 0 auto;
     background-image:url("./../assets/mistnosti/pravidla.png");
     background-repeat: no-repeat;
@@ -183,25 +182,25 @@ export default {
 }
 
 .navod {
-  position: absolute;
-  left: 108px;
-  top: 108px;
-  width: 432px;
-  min-height: 432px;
-  background-color: sandybrown;
-  /*background: #8B4513 linear-gradient(to bottom, #fdce68, rgb(170, 126, 43));*/
-  border:#8B4513 8px solid;
-  border-radius: 10px;
-  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 102px;
+    top: 102px;
+    width: 432px;
+    min-height: 432px;
+    background-color: sandybrown;
+    /*background: #8B4513 linear-gradient(to bottom, #fdce68, rgb(170, 126, 43));*/
+    border:#8B4513 8px solid;
+    border-radius: 10px;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
 
 }
 
  .navod >>> p {
- padding:2px;
- font-size: 17px;
- font-family:'Courier New', Courier, monospace;
- text-align: justify;
-
+    padding: 5px 25px;
+    font-size: 18px;
+    font-family: 'Balsamiq Sans', cursive;
+    /*font-family:'Courier New', Courier, monospace;*/
+    text-align: justify;
 
 }
 

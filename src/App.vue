@@ -7,5 +7,5 @@
 </template>
 
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet');
 </style>
