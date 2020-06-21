@@ -162,7 +162,11 @@ export default {
       this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
       this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
 
-      this.otazka.data = Otazky.otazky[0];
+     
+      let nahodneCislo = Math.floor(Math.random()*this.aktualniMistnost.cisloMax) + this.aktualniMistnost.cisloMin;
+      this.otazka.data = Otazky.otazky[nahodneCislo];
+
+      
 
 
       this.umisti(this.panacek)
