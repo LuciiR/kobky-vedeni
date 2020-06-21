@@ -197,8 +197,10 @@ export default {
 }
 
  .navod >>> p {
- padding: 20px;
- font-size: 20px;
+ padding:2px;
+ font-size: 17px;
+ font-family:'Courier New', Courier, monospace;
+ text-align: justify;
 
 
 }
