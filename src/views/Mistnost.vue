@@ -120,7 +120,7 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
-         
+         this.navod.viditelne = false;
           //this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
 
             console.log("prošel si dvěřmi")
@@ -140,6 +140,7 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
+            this.navod.viditelne = false;
          // this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
           console.log("prošel si dvěřmi")
         }
@@ -161,6 +162,7 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
+            this.navod.viditelne = false;
           //this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
           console.log("prošel si dvěřmi")
         }
@@ -180,6 +182,7 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
+            this.navod.viditelne = false;
           this.pozadi ='kuchyne_box'
           console.log("prošel si dvěřmi")
         }
