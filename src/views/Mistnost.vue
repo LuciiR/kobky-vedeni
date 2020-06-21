@@ -1,5 +1,5 @@
 <template>
-  <div class="pozadi">
+ <div id="pozadi" v-bind:style ="pozadiUrl">
  <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
  <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
 
@@ -44,6 +44,11 @@ export default {
 
       },
 
+     pozadi: 'pravidla',
+     
+
+     
+
       mapy: {
         odsazeniX: 0, 
         odsazeniY: 0, 
@@ -55,7 +60,7 @@ export default {
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1],
-            [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 1, 3, 0, 2],
+            [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 1, 3, 0, 2],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -70,6 +75,7 @@ export default {
     document.addEventListener("keydown", this.posunPanacka);
     this.panacek.element = document.querySelector("#panacek")
     this.pruvodce.element = document.querySelector("#pruvodce")
+    
 
     this.panacek.x = 1 * this.mapy.velikostCtverecku;
     this.panacek.y = 1 * this.mapy.velikostCtverecku;
@@ -79,6 +85,16 @@ export default {
 
     this.umisti(this.panacek)
     this.umisti(this.pruvodce)
+  },
+
+  computed: {
+    pozadiUrl () {
+      const image = require(`@/assets/mistnosti/${this.pozadi}.png`);
+      return {
+        backgroundImage : `url(${image})`
+      }
+    }
+  
   },
 
   methods: {
@@ -102,6 +118,11 @@ export default {
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
+        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
+         
+          //this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
+
+            console.log("prošel si dvěřmi")
         }
       } 
 
@@ -117,7 +138,11 @@ export default {
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
+        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
+         // this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
+          console.log("prošel si dvěřmi")
         }
+
       } 
 
       if(event.code === "ArrowDown") {
@@ -134,6 +159,9 @@ export default {
            this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
+        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
+          //this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
+          console.log("prošel si dvěřmi")
         }
       }  
 
@@ -150,6 +178,9 @@ export default {
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
+        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
+          this.pozadi ='kuchyne'
+          console.log("prošel si dvěřmi")
         }
         
       }
@@ -173,7 +204,7 @@ export default {
   position: absolute;
 }
 
-.pozadi {
+#pozadi {
   position: relative;
     margin: 0 auto;
     background-image:url("./../assets/mistnosti/pravidla.png");
