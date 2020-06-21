@@ -48,12 +48,8 @@ export default {
 
      pozadi: 'pravidla',
 
-     aktualniMistnost: {
-      mistnostIndex: Mistnosti.mistnost
-
-
-
-     },
+     aktualniMistnost: null,
+     aktualniMistnostIndex: 0,
     
 
       mapy: {
@@ -84,11 +80,15 @@ export default {
     this.pruvodce.element = document.querySelector("#pruvodce")
     
 
-    this.panacek.x = 1 * this.mapy.velikostCtverecku;
-    this.panacek.y = 4 * this.mapy.velikostCtverecku;
+    this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
+    this.pozadi = this.aktualniMistnost.pozadi;
 
-    this.pruvodce.x = 11 * this.mapy.velikostCtverecku;
-    this.pruvodce.y = 4 * this.mapy.velikostCtverecku;
+    this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
+    this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
+
+    this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
+    this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
+
 
     this.umisti(this.panacek)
     this.umisti(this.pruvodce)
@@ -111,29 +111,42 @@ export default {
     },
 
     zmenMistnost(){
-      this.aktualniMistnost++;
-      this.aktualniMistnost = Mistnosti[this.aktualniMistnost];
+      if (this.aktualniMistnostIndex === 0) {
+        this.navod.viditelne = false; 
+      } else {
+        this.otazka.viditelne = true;
+      }
+      this.aktualniMistnostIndex++;
+      this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
+      this.pozadi = this.aktualniMistnost.pozadi;
 
+      this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
+      this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
+
+      this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
+      this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
+
+
+      this.umisti(this.panacek)
+      this.umisti(this.pruvodce)
     },
     
-
-
     posunPanacka(event) {
       if(event.code === "ArrowLeft"){
         this.panacek.x -= this.panacek.krok; 
-        let indexSloupce = Math.floor(this.panacek.x / this.mapy.velikostCtverecku); 
-        let indexRadku = Math.floor(this.panacek.y / this.mapy.velikostCtverecku); 
+        let indexSloupce = Math.floor(this.panacek.x / Mistnosti.velikostCtverecku); 
+        let indexRadku = Math.floor(this.panacek.y / Mistnosti.velikostCtverecku); 
 
-        if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 1) {
+        if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 1) {
           this.panacek.x += this.panacek.krok
           console.log("Došlo ke srazka");
-        } else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+        } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
-        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
-         this.navod.viditelne = false;
-          //this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
+        } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
+          this.zmenMistnost()
+         
 
             console.log("prošel si dvěřmi")
         }
@@ -141,19 +154,18 @@ export default {
 
       if(event.code === "ArrowUp") {
         this.panacek.y -= this.panacek.krok;
-        let indexSloupce = Math.floor(this.panacek.x / this.mapy.velikostCtverecku);
-        let indexRadku = Math.floor(this.panacek.y / this.mapy.velikostCtverecku);
-        if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce]=== 1) {
+        let indexSloupce = Math.floor(this.panacek.x / Mistnosti.velikostCtverecku);
+        let indexRadku = Math.floor(this.panacek.y / Mistnosti.velikostCtverecku);
+        if(this.aktualniMistnost.matice[indexRadku][indexSloupce]=== 1) {
           this.panacek.y += this.panacek.krok
         }
-        else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+        else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
           
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
-        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
-            this.navod.viditelne = false;
-         // this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
+        } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
+           this.zmenMistnost()
           console.log("prošel si dvěřmi")
         }
 
@@ -161,43 +173,39 @@ export default {
 
       if(event.code === "ArrowDown") {
         this.panacek.y += this.panacek.krok;
-        let indexSloupce = Math.floor (this.panacek.x / this.mapy.velikostCtverecku);
-        let indexRadku = Math.floor ((this.panacek.y + this.panacek.vyska) / this.mapy.velikostCtverecku);
+        let indexSloupce = Math.floor (this.panacek.x /Mistnosti.velikostCtverecku);
+        let indexRadku = Math.floor ((this.panacek.y + this.panacek.vyska) / Mistnosti.velikostCtverecku);
 
-        if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce]=== 1) {
+        if(this.aktualniMistnost.matice[indexRadku][indexSloupce]=== 1) {
             this.panacek.y -= this.panacek.krok
             console.log("Došlo ke srazka");
         }
-        else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+        else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
            
            this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
-        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
-            this.navod.viditelne = false;
-          //this.pozadi.style.backgroundImage = `url(src/assets/mistnosti/kuchyne_box.png)`
+        } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
+           this.zmenMistnost()
           console.log("prošel si dvěřmi")
         }
       }  
 
       if(event.code === "ArrowRight") {
         this.panacek.x += this.panacek.krok;
-        let indexSloupce = Math.floor((this.panacek.x + this.panacek.sirka) / this.mapy.velikostCtverecku);
-        let indexRadku = Math.floor (this.panacek.y / this.mapy.velikostCtverecku);
-        if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 1) {
+        let indexSloupce = Math.floor((this.panacek.x + this.panacek.sirka) / Mistnosti.velikostCtverecku);
+        let indexRadku = Math.floor (this.panacek.y / Mistnosti.velikostCtverecku);
+        if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 1) {
             this.panacek.x -= this.panacek.krok
             console.log("Došlo ke srazka");
         } 
-        else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
+        else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
           
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
-        } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
-            this.navod.viditelne = false;
-          this.pozadi ='kuchyne_box'
-          zmenMistnost();
-
+        } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
+            this.zmenMistnost()
           console.log("prošel si dvěřmi")
         }
         

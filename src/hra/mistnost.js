@@ -1,8 +1,10 @@
 export default {
 
+    velikostCtverecku : 72,
+
     mistnost: [ { 
             
-                pozadi: 'pravidla',
+                pozadi:'pravidla',
                 pozicePanacka:{
                     x: 1,
                     y:4
@@ -13,7 +15,7 @@ export default {
                 },
                 cisloMin: 0,
                 cisloMax: 0,
-                matice: [
+                matice: 
                 [
                     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -25,12 +27,12 @@ export default {
                     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
                     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
                 ],
-                         ]
+                         
 
             },
             {
             
-                pozadi: 'kuchyne_box',
+                pozadi:'kuchyne_box',
                 pozicePanacka:{
                     x: 12,
                     y:7
@@ -41,7 +43,7 @@ export default {
                 },
                 cisloMin: 0,
                 cisloMax: 0,
-                matice: [
+                matice: 
                 [
                     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
@@ -53,7 +55,7 @@ export default {
                     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
                     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
                 ]
-                    ]
+                    
             },
             {
             
@@ -69,7 +71,7 @@ export default {
                 },
                 cisloMin: 0,
                 cisloMax: 0,
-                matice: [
+                matice: 
                 [
                     
                     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -82,7 +84,7 @@ export default {
                     [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 1],
                     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
                 ]
-                    ]
+                    
             }
 
         ]      
