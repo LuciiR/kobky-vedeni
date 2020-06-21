@@ -6,9 +6,16 @@
     <!-- <img id= "pruvodce" v-bind:style="pruvodceUrl" alt="pruvodce"> -->
 
     <div 
-        class = "navod" v-show="navod.viditelne" v-html= "navod.text"> 
+        class = "navod" v-if="navod.viditelne" v-html= "navod.text"> 
     </div>
-    <!--<div class = "otazka" v-show="otazka.viditelne"> </div> -->
+    
+    <div class = "otazka" v-if="otazka.viditelne" > 
+      <p> {{otazka.data.uvitani}}</p>
+      <p> {{otazka.data.otazka}}</p>
+      <p> {{otazka.data.odpovedi}}</p>
+
+
+      </div> 
 
   </div>
 </template>
@@ -43,6 +50,15 @@ export default {
       navod: {
         viditelne : false,
         text: Otazky.otazky[15].uvitani
+      },
+
+      otazka: {
+        viditelne: false,
+        data:null,
+        
+        
+
+
       },
 
      pozadi: 'pravidla',
@@ -88,6 +104,8 @@ export default {
     this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
     this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
 
+    
+
 
     this.umisti(this.panacek)
     this.umisti(this.pruvodce)
@@ -131,6 +149,8 @@ export default {
       this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
       this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
 
+      this.otazka.data = Otazky.otazky[0];
+
 
       this.umisti(this.panacek)
       this.umisti(this.pruvodce)
@@ -146,7 +166,13 @@ export default {
           this.panacek.x += this.panacek.krok
           console.log("Došlo ke srazka");
         } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
-          this.navod.viditelne = true;
+          //this.navod.viditelne = true;
+
+          if(this.aktualniMistnostIndex === 0) {
+            this.navod.viditelne = true;
+          } else {
+            this.otazka.viditelne = true;
+          }
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
@@ -166,7 +192,11 @@ export default {
         }
         else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
           
-          this.navod.viditelne = true;
+          if(this.aktualniMistnostIndex === 0) {
+            this.navod.viditelne = true;
+          } else {
+            this.otazka.viditelne = true;
+          }
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
@@ -187,7 +217,11 @@ export default {
         }
         else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
            
-           this.navod.viditelne = true;
+           if(this.aktualniMistnostIndex === 0) {
+            this.navod.viditelne = true;
+          } else {
+            this.otazka.viditelne = true;
+          }
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
@@ -206,7 +240,11 @@ export default {
         } 
         else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
           
-          this.navod.viditelne = true;
+          if(this.aktualniMistnostIndex === 0) {
+            this.navod.viditelne = true;
+          } else {
+            this.otazka.viditelne = true;
+          }
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
@@ -244,7 +282,8 @@ export default {
     height: 720px;
 }
 
-.navod {
+.navod,
+.otazka {
     position: absolute;
     left: 102px;
     top: 102px;
