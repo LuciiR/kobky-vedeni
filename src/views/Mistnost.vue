@@ -15,7 +15,7 @@
 
 
 <script>
-import Otazky from "@/hra/ozazky.js"
+import Otazky from "@/hra/otazky.js"
 
 export default {
   data() {
@@ -26,7 +26,8 @@ export default {
         sirka: 70,
         vyska: 70,
         element: null,
-        pocetZivotu:5,
+        pocetZivotu: 5,
+        pocetBodu: 0,
         krok: 72
       },
       pruvodce: {
@@ -40,7 +41,7 @@ export default {
 
       navod: {
         viditelne : false,
-        text:Hra.otazky [15].uvitani
+        text:Otazky.otazky [15].uvitani
 
       },
 
