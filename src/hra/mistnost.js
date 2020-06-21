@@ -11,8 +11,6 @@ export default {
                 x: 11,
                 y: 4
             },
-            cisloMin: 0,
-            cisloMax: 0,
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -36,7 +34,7 @@ export default {
                 y: 6
             },
             cisloMin: 0,
-            cisloMax: 0,
+            cisloMax: 4,
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 [1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
@@ -59,8 +57,8 @@ export default {
                 x: 10,
                 y: 2
             },
-            cisloMin: 0,
-            cisloMax: 0,
+            cisloMin: 5,
+            cisloMax: 9,
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 3, 1, 2, 1, 1],
@@ -83,8 +81,8 @@ export default {
                 x: 13,
                 y: 5
             },
-            cisloMin: 0,
-            cisloMax: 0,
+            cisloMin: 10,
+            cisloMax: 14,
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
