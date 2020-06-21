@@ -1,6 +1,6 @@
 
 
-otazky: [
+hra: [
 
     // 1.místnost - kuchyně
     { 
