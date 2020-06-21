@@ -1,14 +1,14 @@
 <template>
  <div id="pozadi" v-bind:style ="pozadiUrl">
- <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
- <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
 
+    <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
+    <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce"> 
+    <!-- <img id= "pruvodce" v-bind:style="pruvodceUrl" alt="pruvodce"> -->
 
-  <div class = "navod" v-show="navod.viditelne" v-html= "navod.text"> 
-   
-
-  </div>
-  <!--<div class = "otazka" v-show="otazka.viditelne"> </div> -->
+    <div 
+        class = "navod" v-show="navod.viditelne" v-html= "navod.text"> 
+    </div>
+    <!--<div class = "otazka" v-show="otazka.viditelne"> </div> -->
 
   </div>
 </template>
@@ -31,19 +31,18 @@ export default {
         pocetBodu: 0,
         krok: 72
       },
+
       pruvodce: {
         x:0,
         y:0,
         sirka:70,
         vyska:70,
         element:null,
-
       },
 
       navod: {
         viditelne : false,
-        text:Otazky.otazky [15].uvitani
-
+        text: Otazky.otazky[15].uvitani
       },
 
      pozadi: 'pravidla',
@@ -51,7 +50,6 @@ export default {
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
     
-
       mapy: {
         odsazeniX: 0, 
         odsazeniY: 0, 
@@ -71,6 +69,7 @@ export default {
           ]
         ]
       }
+
     }
   },
 
@@ -98,9 +97,15 @@ export default {
     pozadiUrl () {
       const image = require(`@/assets/mistnosti/${this.pozadi}.png`);
       return {
-        backgroundImage : `url(${image})`
+        backgroundImage: `url(${image})`
       }
-    }
+    }, /*
+    pruvodceUrl () {
+      const image = require(`@/assets/charaktery/${this.NPC}.png`);
+      return {
+        backgroundImage: `url(${image})`
+      }
+    } */
   
   },
 
@@ -227,12 +232,13 @@ export default {
 
 #pruvodce {
     position: absolute;
+    /* background-image: url("./../assets/charaktery/satyrL.png"); */
 }
 
 #pozadi {
-  position: relative;
+    position: relative;
     margin: 0 auto;
-    background-image:url("./../assets/mistnosti/pravidla.png");
+    background-image: url("./../assets/mistnosti/pravidla.png");
     background-repeat: no-repeat;
     width: 1080px;
     height: 720px;
@@ -249,7 +255,6 @@ export default {
     border: #c27d58 8px solid;
     border-radius: 10px;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
-
 }
 
  .navod >>> p {
@@ -259,7 +264,6 @@ export default {
     /*font-family:'Courier New', Courier, monospace;*/
     text-align: justify;
     color: #663300;
-
 }
 
 </style>
