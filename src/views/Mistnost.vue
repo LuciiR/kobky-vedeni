@@ -78,7 +78,7 @@ export default {
     
 
     this.panacek.x = 1 * this.mapy.velikostCtverecku;
-    this.panacek.y = 1 * this.mapy.velikostCtverecku;
+    this.panacek.y = 4 * this.mapy.velikostCtverecku;
 
     this.pruvodce.x = 11 * this.mapy.velikostCtverecku;
     this.pruvodce.y = 4 * this.mapy.velikostCtverecku;
@@ -179,7 +179,7 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
-          this.pozadi ='kuchyne'
+          this.pozadi ='kuchyne_box'
           console.log("prošel si dvěřmi")
         }
         
