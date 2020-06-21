@@ -31,31 +31,26 @@ export default {
         pocetBodu: 0,
         krok: 72
       },
+
       pruvodce: {
         x:0,
         y:0,
         sirka:70,
         vyska:70,
         element:null,
-
       },
 
       navod: {
         viditelne : false,
-        text:Otazky.otazky [15].uvitani
-
+        text: Otazky.otazky[15].uvitani
       },
 
      pozadi: 'pravidla',
 
      aktualniMistnost: {
-      mistnostIndex: Mistnosti.mistnost
-
-
-
+        mistnostIndex: Mistnosti.mistnost
      },
     
-
       mapy: {
         odsazeniX: 0, 
         odsazeniY: 0, 
@@ -75,6 +70,7 @@ export default {
           ]
         ]
       }
+
     }
   },
 
