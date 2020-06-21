@@ -10,8 +10,7 @@
     </div>
     
     <div class = "otazka" v-if="otazka.viditelne" > 
-      <p> {{otazka.data.uvitani}}</p>
-      <p> {{otazka.data.otazka}}</p>
+      <p> {{otazka.data.uvitani}} {{otazka.data.otazka}}</p>
 
       <ul class="odpovedi" v-for="(odpoved, index) in otazka.data.odpovedi" v-bind:key="index">
 			<li> 
@@ -287,8 +286,7 @@ export default {
     height: 720px;
 }
 
-.navod,
-.otazka {
+.navod {
     position: absolute;
     left: 102px;
     top: 102px;
@@ -300,8 +298,7 @@ export default {
     border-radius: 10px;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
 }
-
- .navod >>> p {
+.navod >>> p {
     padding: 5px 25px;
     font-size: 18px;
     font-family: 'Balsamiq Sans', cursive;
@@ -309,5 +306,39 @@ export default {
     text-align: justify;
     color: #663300;
 }
+
+.otazka {
+    position: absolute;
+    left: 102px;
+    top: 102px;
+    width: 432px;
+    min-height: 432px;
+    background-color: #ffe6cc;
+    /*background: #8B4513 linear-gradient(to bottom, #fdce68, rgb(170, 126, 43));*/
+    border: #c27d58 8px solid;
+    border-radius: 10px;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+    padding: 5px 25px;
+    font-size: 18px;
+    font-family: 'Balsamiq Sans', cursive;
+    /*font-family:'Courier New', Courier, monospace;*/
+    text-align: justify;
+    color: #663300;
+}
+
+.odpovedi {
+    padding: 5px 25px;
+    font-size: 18px;
+    font-family: 'Balsamiq Sans', cursive;
+    /*font-family:'Courier New', Courier, monospace;*/
+    text-align: center;
+    color: #663300;
+    
+}
+.odpovedi >>> a {
+    text-decoration: none;
+}
+
+
 
 </style>
