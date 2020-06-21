@@ -15,7 +15,7 @@
 
 
 <script>
-import Hra from "@/hra/hra.js"
+import Otazky from "@/hra/ozazky.js"
 
 export default {
   data() {
