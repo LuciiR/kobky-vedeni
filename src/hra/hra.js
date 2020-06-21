@@ -5,16 +5,16 @@ export default {
         // 1.místnost - kuchyně
         { 
             id: 1,
-            uvitani: '"To jsem rád, že tě vidím! Určitě mi pomůžeš s receptem. Takže, potřebuji zjistit, ',
-            otazka: 'která z těchto hub je nejedlá:"',
+            uvitani: '<p>"To jsem rád, že tě vidím! Určitě mi pomůžeš s receptem. Takže, potřebuji zjistit, ',
+            otazka: 'která z těchto hub je nejedlá:"</p>',
             odpovedi: [
-                'hřib smrkový',
-                'bedla obecná',
-                'hřib satan',
+                '<li>hřib smrkový</li>',
+                '<li>bedla obecná</li>',
+                '<li>hřib satan</li>',
             ],
             spravna: 0,
-            reakceYes: '"Skvělé! To bude super bašta pro celé podzemí! Díky za pomoc."',
-            reakceNo: '"Mno, raději se podívám do kuchařky, to se mi nezdá,… hmmm…, že ty chceš, aby nám bylo všem špatně?!? Mazej pryč, než tě vezmu válečkem!"',
+            reakceYes: '<p>"Skvělé! To bude super bašta pro celé podzemí! Díky za pomoc."</p>',
+            reakceNo: '<p>"Mno, raději se podívám do kuchařky, to se mi nezdá,… hmmm…, že ty chceš, aby nám bylo všem špatně?!? Mazej pryč, než tě vezmu válečkem!"</p>',
         },
         { 
             id: 2,
@@ -203,7 +203,7 @@ export default {
         // 0.místnost - pravidla
         { 
             id: 16,
-            uvitani: '<p>Vítej učedníku! <br> Jistě se těšíš na dobrodružnou cestu do našeho podzemí, ovšem pozor, slávy a bohatství u nás nedosáhneš mečem či kouzlem, ale svými vědomostmi! Připrav se proto na nejrůznější záludné otázky, které ti obyvatelé těchto kobek budou klást. V každé místnosti, kterou navštívíš, tě bude čekat stvoření s otázkou, která ho moc trápí. Když správně odpovíš, odmění tě zlaťákem, ovšem když se spleteš, nejspíš tě vezme něčím po hlavě a to trochu zabolí! Dostaneš se k němu jednoduše pomocí šipek na klávesnici. Ovšem pozor, některé místnosti jsou trochu záludné a asi se trochu projdeš. Tak hodně zdaru a vzhůru dolů do podzemí!</p>',
+            uvitani: '<p><strong>Vítej učedníku</strong> na dobrodružné cestě do našeho podzemí! Ovšem pozor, slávy a bohatství u nás nedosáhneš mečem či kouzlem, ale svými <strong>vědomostmi!</strong></p> <p>V každé místnosti, kterou navštívíš, tě bude čekat místní obyvatel s otázkou, která ho moc trápí. <strong>Když správně odpovíš, odmění tě zlaťákem, ovšem když se spleteš, nejspíš tě vezme něčím po hlavě</strong> a to trochu zabolí! Dostaneš se k němu jednoduše pomocí <strong>šipek na klávesnici</strong>. Některé místnosti jsou trochu záludné a asi se trochu projdeš.</p> <p>Tak hodně zdaru a <strong>vzhůru dolů do podzemí!</strong></p>',
         },
         // místnost - prohra
         { 
@@ -246,6 +246,7 @@ export default {
             hodnoceni: 'Král',
             popis: 'Lepší už to být prostě nemůže. Král musí být moudrý, silný a znalý mnoha oborů, aby mohl svému království dobře vládnout. To vše jsi právě prokázal. Je vidět, že tě jen tak někdo nenachytá na švestkách a nemůže tě vodit za nos. Výborně! Ať žije král!',
         },
+        
+    ],
 
-    ]
-}
+};
