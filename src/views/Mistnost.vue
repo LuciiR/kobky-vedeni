@@ -48,9 +48,9 @@ export default {
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 2],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1],
+            [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 1, 3, 0, 2],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -93,7 +93,6 @@ export default {
           this.panacek.x += this.panacek.krok
           console.log("Došlo ke srazka");
         } else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
-          this.panacek.x += this.panacek.krok
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
@@ -108,7 +107,7 @@ export default {
           this.panacek.y += this.panacek.krok
         }
         else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
-          this.panacek.y += this.panacek.krok
+          
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
@@ -125,7 +124,7 @@ export default {
             console.log("Došlo ke srazka");
         }
         else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
-           this.panacek.y -= this.panacek.krok
+           
            this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
@@ -141,7 +140,7 @@ export default {
             console.log("Došlo ke srazka");
         } 
         else if(this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 3) {
-          this.panacek.x -= this.panacek.krok
+          
           this.navod.viditelne = true;
           
           console.log("došel si k pruvodci")
