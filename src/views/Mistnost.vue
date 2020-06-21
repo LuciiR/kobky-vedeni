@@ -16,6 +16,7 @@
 
 <script>
 import Otazky from "@/hra/otazky.js"
+import Mistnosti from "@/hra/mistnost.js"
 
 export default {
   data() {
@@ -46,9 +47,14 @@ export default {
       },
 
      pozadi: 'pravidla',
-     
 
-     
+     aktualniMistnost: {
+      mistnostIndex: Mistnosti.mistnost
+
+
+
+     },
+    
 
       mapy: {
         odsazeniX: 0, 
@@ -102,6 +108,12 @@ export default {
     umisti(objekt){
       objekt.element.style.left =`${this.mapy.odsazeniX + objekt.x}px`; 
       objekt.element.style.top =`${this.mapy.odsazeniY + objekt.y}px`;
+    },
+
+    zmenMistnost(){
+      this.aktualniMistnost++;
+      this.aktualniMistnost = Mistnosti[this.aktualniMistnost];
+
     },
     
 
@@ -181,6 +193,8 @@ export default {
           console.log("došel si k pruvodci")
         } else if (this.mapy.poleMapy[this.mapy.mistnost][indexRadku][indexSloupce] === 2) {
           this.pozadi ='kuchyne_box'
+          zmenMistnost();
+
           console.log("prošel si dvěřmi")
         }
         
