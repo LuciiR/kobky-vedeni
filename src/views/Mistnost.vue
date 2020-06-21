@@ -14,10 +14,11 @@
 
       <ul class="odpovedi" v-for="(odpoved, index) in otazka.data.odpovedi" v-bind:key="index">
 			<li> 
-			   <a href="#"> {{odpoved}} </a>
+			   <a v-on:click="klik(index)" href="#"> {{odpoved}} </a>
 			</li>
 		</ul>
 
+    <p> {{otazka.odpoved}} </p>
 
       </div> 
 
@@ -59,10 +60,7 @@ export default {
       otazka: {
         viditelne: false,
         data:null,
-        
-        
-
-
+        odpoved: null,
       },
 
      pozadi: 'pravidla',
@@ -135,6 +133,17 @@ export default {
     umisti(objekt){
       objekt.element.style.left =`${this.mapy.odsazeniX + objekt.x}px`; 
       objekt.element.style.top =`${this.mapy.odsazeniY + objekt.y}px`;
+    },
+
+    klik(index) {
+        if (index === this.otazka.data.spravna) {
+            console.log('yes');
+            this.otazka.odpoved = this.otazka.data.reakceYes
+        } else {
+            console.log('no');
+            this.otazka.odpoved = this.otazka.data.reakceNo
+        }
+        
     },
 
     zmenMistnost(){
@@ -333,7 +342,6 @@ export default {
     /*font-family:'Courier New', Courier, monospace;*/
     text-align: center;
     color: #663300;
-    
 }
 .odpovedi >>> a {
     text-decoration: none;
