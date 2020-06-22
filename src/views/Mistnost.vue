@@ -170,6 +170,7 @@ export default {
       this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
       
       let nahodneCislo = this.aktualniMistnost.cisloMin;
+      
       if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
          nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin));
          this.otazka.odpoved = null;

@@ -96,7 +96,7 @@ export default {
             ]
         },
         { 
-            pozadi:'mistnost',
+            pozadi:'pravidla',
             pozicePanacka:{
                 x: 1,
                 y:1
