@@ -13,15 +13,17 @@
     <div class = "otazka" v-if="otazka.viditelne" > 
       <p> {{otazka.data.uvitani}} {{otazka.data.otazka}}</p>
 
+      <p> {{otazka.data.nazev}} <br> {{otazka.data.hodnoceni}} </p>
+
       <ul class="odpovedi" v-for="(odpoved, index) in otazka.data.odpovedi" v-bind:key="index">
-			<li> 
-			   <a v-on:click="klik(index)" href="#"> {{odpoved}} </a>
-			</li>
-		</ul>
+        <li> 
+          <a v-on:click="klik(index)" href="#"> {{odpoved}} </a>
+        </li>
+      </ul>
 
-    <p> {{otazka.odpoved}} </p>
+      <p> {{otazka.odpoved}} </p>
 
-      </div> 
+    </div> 
 
   </div>
 </template>
