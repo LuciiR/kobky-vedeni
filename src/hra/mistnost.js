@@ -3,14 +3,15 @@ export default {
     mistnost: [ 
         { 
             pozadi:'pravidla',
-            pruvodce: 'satyrL',
+            imgPruvodce : 'satyrL',
+            
             pozicePanacka:{
                 x: 1,
-                y: 4
+                y: 4,
             },
             poziceNPC: {
                 x: 11,
-                y: 4
+                y: 4,
             },
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -26,15 +27,18 @@ export default {
         },
         {
             pozadi: 'kuchyne',
-            pruvodce: 'kuchL',
+            imgPruvodce : 'kuchL',
+            
             pozicePanacka:{
                 x: 1,
-                y: 4
+                y: 4,
             },
+
             poziceNPC: {
                 x: 12,
-                y: 6
+                y: 6,
             },
+            
             cisloMin: 0,
             cisloMax: 4,
             matice: [
@@ -51,14 +55,15 @@ export default {
         },
         {
             pozadi: 'knihovna',
-            pruvodce: 'knihL',
+            imgPruvodce : 'knihL',
+           
             pozicePanacka:{
                 x: 1,
-                y: 6
+                y: 6,
             },
             poziceNPC: {
                 x: 10,
-                y: 2
+                y: 2,
             },
             cisloMin: 5,
             cisloMax: 9,
@@ -76,14 +81,15 @@ export default {
         },
         {
             pozadi: 'posilovna',
-            pruvodce: 'cvicL',
+            imgPruvodce : 'cvicL',
+            
             pozicePanacka:{
                 x: 1,
-                y:2
+                y:2,
             },
             poziceNPC: {
                 x: 13,
-                y: 5
+                y: 5,
             },
             cisloMin: 10,
             cisloMax: 14,
@@ -101,13 +107,14 @@ export default {
         },
         { 
             pozadi:'konec',
+            imgPruvodce : 'demonL',
             pozicePanacka:{
                 x: 1,
                 y:1
             },
             poziceNPC: {
                 x: 11,
-                y: 5
+                y: 5,
             },
             cisloMin: 16,
             cisloMax: 19,
@@ -117,9 +124,9 @@ export default {
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2],
+                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 0, 1],
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1],
-                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
             ]

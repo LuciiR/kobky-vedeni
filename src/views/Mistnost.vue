@@ -2,8 +2,9 @@
  <div id="pozadi" v-bind:style ="pozadiUrl">
 
     <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
-    <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
-  <!--  <img id= "pruvodce" v-bind:style="pruvodceUrl" alt="pruvodce">  -->
+    <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">  
+    <img id= "zivoty" v-bind:src="require(`./../assets/skore/zivot3.png`)" alt="zivoty"> 
+    <img id= "bodiky" v-bind:src="require(`./../assets/skore/bod0.png`)" alt="bodiky">  
 
     <div 
         class = "navod" v-if="navod.viditelne" v-html= "navod.text"> 
@@ -62,45 +63,47 @@ export default {
         data:null,
         odpoved: null,
       },
+      zivoty: {
+         x:144,
+         y:612,
+         sirka: 216,
+         vyska:72,
+         element:null
+      },
+
+      bodiky: {
+         x:720,
+         y:612,
+         sirka: 216,
+         vyska:72,
+         element:null
+
+      },
 
      pozadi: 'pravidla',
-     /* pruvodce: 'satyrL', */
+
+    
+     
 
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
-    
-      mapy: {
-        odsazeniX: 0, 
-        odsazeniY: 0, 
-        velikostCtverecku: 72, 
-        mistnost: 0, 
-        poleMapy: [
-          [
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 1],
-            [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 1, 3, 0, 2],
-            [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-          ]
-        ]
-      }
+     
 
-    }
+    };
   },
 
   mounted() {
     document.addEventListener("keydown", this.posunPanacka);
-    this.panacek.element = document.querySelector("#panacek")
-    this.pruvodce.element = document.querySelector("#pruvodce")
+    this.panacek.element = document.querySelector("#panacek");
+    this.pruvodce.element = document.querySelector("#pruvodce");
+    this.zivoty.element = document.querySelector("#zivoty");
+    this.bodiky.element = document.querySelector("#bodiky");
+
     
 
     this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
     this.pozadi = this.aktualniMistnost.pozadi;
-    /* this.pruvodce = this.aktualniMistnost.pruvodce; */
+    
 
     this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
     this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
@@ -108,11 +111,10 @@ export default {
     this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
     this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
 
-    
-
-
-    this.umisti(this.panacek)
-    this.umisti(this.pruvodce)
+    this.umisti(this.panacek);
+    this.umisti(this.pruvodce);
+    this.umisti(this.zivoty);
+    this.umisti(this.bodiky);
   },
 
   computed: {
@@ -122,24 +124,18 @@ export default {
         backgroundImage: `url(${image})`
       }
     }, 
-    /*
-    pruvodceUrl () {
-      const npcimage = require(`@/assets/charaktery/${this.pruvodce}.png`);
-      return {
-        backgroundImage: `url(${npcimage})`
-      }
-    }
-    */
-  
+    
   },
 
   methods: {
     umisti(objekt){
-      objekt.element.style.left =`${this.mapy.odsazeniX + objekt.x}px`; 
-      objekt.element.style.top =`${this.mapy.odsazeniY + objekt.y}px`;
+      objekt.element.style.left =`${objekt.x}px`; 
+      objekt.element.style.top =`${objekt.y}px`;
     },
 
     klik(index) {
+        if (this.otazka.odpoved)
+          return;
         if (index === this.otazka.data.spravna) {
             console.log('yes');
             this.panacek.pocetBodu++;
@@ -149,7 +145,8 @@ export default {
             this.otazka.odpoved = this.otazka.data.reakceNo;
             this.panacek.pocetZivotu--;
         }
-        
+        this.zivoty.element.src =  require(`./../assets/skore/zivot${this.panacek.pocetZivotu}.png`);
+        this.bodiky.element.src =  require(`./../assets/skore/bod${this.panacek.pocetBodu}.png`);
     },
 
     zmenMistnost(){
@@ -166,8 +163,8 @@ export default {
         }
       this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
       this.pozadi = this.aktualniMistnost.pozadi; 
-      /* this.pruvodce = this.aktualniMistnost.pruvodce; */
-
+      this.pruvodce.element.src = require(`./../assets/charaktery/${this.aktualniMistnost.imgPruvodce}.png`);
+      
       this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
       this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
 
@@ -175,6 +172,7 @@ export default {
       this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
       
       let nahodneCislo = this.aktualniMistnost.cisloMin;
+
       
       if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
          nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin));
@@ -186,8 +184,10 @@ export default {
       this.otazka.data = Otazky.otazky[nahodneCislo];
     
 
-      this.umisti(this.panacek)
-      this.umisti(this.pruvodce)
+      this.umisti(this.panacek);
+      this.umisti(this.pruvodce);
+      this.umisti(this.zivoty);
+      this.umisti(this.bodiky);
 
       return true;
     },
@@ -202,8 +202,34 @@ export default {
           this.panacek.x += this.panacek.krok
           console.log("Došlo ke srazka");
         } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
-          //this.navod.viditelne = true;
+          
 
+          if(this.aktualniMistnostIndex === 0) {
+            this.navod.viditelne = true;
+          } else {
+            this.otazka.viditelne = true;
+          }
+          
+          console.log("došel si k pruvodci")
+        } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
+            if(this.zmenMistnost())  {
+              console.log("prošel si dvěřmi")
+            } else {
+                console.log("Konec hry")
+            }
+        }
+        this.panacek.element.src = require(`./../assets/charaktery/char1L.png`);
+
+      } 
+
+      if(event.code === "ArrowUp") {
+        this.panacek.y -= this.panacek.krok;
+        let indexSloupce = Math.floor(this.panacek.x / Mistnosti.velikostCtverecku);
+        let indexRadku = Math.floor(this.panacek.y / Mistnosti.velikostCtverecku);
+        if(this.aktualniMistnost.matice[indexRadku][indexSloupce]=== 1) {
+          this.panacek.y += this.panacek.krok;
+        } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
+          
           if(this.aktualniMistnostIndex === 0) {
             this.navod.viditelne = true;
           } else {
@@ -213,40 +239,12 @@ export default {
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
           if(this.zmenMistnost())  {
-             console.log("prošel si dvěřmi")
-           } else {
-              console.log("Konec hry")
-          }
-
-       
-          }
+              console.log("prošel si dvěřmi")
+            } else {
+                console.log("Konec hry")
+            }
         } 
-
-      if(event.code === "ArrowUp") {
-        this.panacek.y -= this.panacek.krok;
-        let indexSloupce = Math.floor(this.panacek.x / Mistnosti.velikostCtverecku);
-        let indexRadku = Math.floor(this.panacek.y / Mistnosti.velikostCtverecku);
-        if(this.aktualniMistnost.matice[indexRadku][indexSloupce]=== 1) {
-          this.panacek.y += this.panacek.krok
-        }
-        else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
-          
-          if(this.aktualniMistnostIndex === 0) {
-            this.navod.viditelne = true;
-          } else {
-            this.otazka.viditelne = true;
-          }
-          
-          console.log("došel si k pruvodci")
-        } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
-         if(this.zmenMistnost())  {
-             console.log("prošel si dvěřmi")
-           } else {
-              console.log("Konec hry")
-          }
-
       } 
-      }
 
       if(event.code === "ArrowDown") {
         this.panacek.y += this.panacek.krok;
@@ -256,8 +254,7 @@ export default {
         if(this.aktualniMistnost.matice[indexRadku][indexSloupce]=== 1) {
             this.panacek.y -= this.panacek.krok
             console.log("Došlo ke srazka");
-        }
-        else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
+        } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
            
            if(this.aktualniMistnostIndex === 0) {
             this.navod.viditelne = true;
@@ -273,7 +270,7 @@ export default {
               console.log("Konec hry")
           }
         }  
-        }
+      }
 
       if(event.code === "ArrowRight") {
         this.panacek.x += this.panacek.krok;
@@ -293,15 +290,14 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
-        if(this.zmenMistnost())  {
+          if(this.zmenMistnost())  {
              console.log("prošel si dvěřmi")
-           } else {
-              console.log("Konec hry")
+          } else {
+             console.log("Konec hry")
           }
-
+        } 
+        this.panacek.element.src = require(`./../assets/charaktery/char1P.png`);
       } 
-        
-      }
 
       this.umisti(this.panacek); 
       this.umisti(this.pruvodce)
@@ -319,7 +315,14 @@ export default {
 
 #pruvodce {
     position: absolute;
-    background-image: url("./../assets/charaktery/satyrL.png");
+}
+
+#zivoty {
+    position: absolute;
+}
+
+#bodiky {
+  position: absolute;
 }
 
 #pozadi {
