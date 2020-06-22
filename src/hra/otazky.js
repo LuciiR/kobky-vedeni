@@ -208,7 +208,7 @@ export default {
         // místnost - prohra
         { 
             id: 20,
-            uvitani: '"..."',
+            uvitani: '"Prohral si.. Zkus to znova."',
         },
         // místnost - výhra
         { 

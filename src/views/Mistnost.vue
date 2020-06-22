@@ -175,7 +175,7 @@ export default {
 
       
       if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
-         nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin));
+         nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin)+1);
          this.otazka.odpoved = null;
       } else {
          nahodneCislo += this.panacek.pocetBodu;
