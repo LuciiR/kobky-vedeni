@@ -12,7 +12,7 @@ export default {
                 'bedla obecná',
                 'hřib satan',
             ],
-            spravna: 0,
+            spravna: 2,
             reakceYes: '"Skvělé! To bude super bašta pro celé podzemí! Díky za pomoc."',
             reakceNo: '"Mno, raději se podívám do kuchařky, to se mi nezdá,… hmmm…, že ty chceš, aby nám bylo všem špatně?!? Mazej pryč, než tě vezmu válečkem!"',
         },

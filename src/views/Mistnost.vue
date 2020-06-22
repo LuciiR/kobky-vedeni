@@ -139,10 +139,12 @@ export default {
     klik(index) {
         if (index === this.otazka.data.spravna) {
             console.log('yes');
+            this.panacek.pocetBodu++;
             this.otazka.odpoved = this.otazka.data.reakceYes;
         } else {
             console.log('no');
             this.otazka.odpoved = this.otazka.data.reakceNo;
+            this.panacek.pocetZivotu--;
         }
         
     },
@@ -153,22 +155,36 @@ export default {
       } else {
         this.otazka.viditelne = false;
       }
-      this.aktualniMistnostIndex++;
+
+      if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
+        this.aktualniMistnostIndex++; 
+        } else {
+          return false;
+        }
       this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
-      this.pozadi = this.aktualniMistnost.pozadi;
+      this.pozadi = this.aktualniMistnost.pozadi; 
 
       this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
       this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
 
       this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
       this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
-
-        let nahodneCislo = Math.floor(Math.random()*this.aktualniMistnost.cisloMax) + this.aktualniMistnost.cisloMin;
+      
+      let nahodneCislo = this.aktualniMistnost.cisloMin;
+      if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
+         nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin));
+         this.otazka.odpoved = null;
+      } else {
+         nahodneCislo += this.panacek.pocetBodu;
+         this.otazka.odpoved = Otazky.otazky[nahodneCislo].popis;
+      }
       this.otazka.data = Otazky.otazky[nahodneCislo];
-
+    
 
       this.umisti(this.panacek)
       this.umisti(this.pruvodce)
+
+      return true;
     },
     
     posunPanacka(event) {
@@ -191,12 +207,15 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
-          this.zmenMistnost()
-         
+          if(this.zmenMistnost())  {
+             console.log("prošel si dvěřmi")
+           } else {
+              console.log("Konec hry")
+          }
 
-            console.log("prošel si dvěřmi")
-        }
-      } 
+       
+          }
+        } 
 
       if(event.code === "ArrowUp") {
         this.panacek.y -= this.panacek.krok;
@@ -215,11 +234,14 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
-           this.zmenMistnost()
-          console.log("prošel si dvěřmi")
-        }
+         if(this.zmenMistnost())  {
+             console.log("prošel si dvěřmi")
+           } else {
+              console.log("Konec hry")
+          }
 
       } 
+      }
 
       if(event.code === "ArrowDown") {
         this.panacek.y += this.panacek.krok;
@@ -240,10 +262,13 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
-           this.zmenMistnost()
-          console.log("prošel si dvěřmi")
+           if(this.zmenMistnost())  {
+             console.log("prošel si dvěřmi")
+           } else {
+              console.log("Konec hry")
+          }
+        }  
         }
-      }  
 
       if(event.code === "ArrowRight") {
         this.panacek.x += this.panacek.krok;
@@ -263,9 +288,13 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
-            this.zmenMistnost()
-          console.log("prošel si dvěřmi")
-        }
+        if(this.zmenMistnost())  {
+             console.log("prošel si dvěřmi")
+           } else {
+              console.log("Konec hry")
+          }
+
+      } 
         
       }
 
