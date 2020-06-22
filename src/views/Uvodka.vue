@@ -2,7 +2,7 @@
 
 <div class = "pozadi">
 
-<!--<img v-bind:src="require(`./../assets/mistnosti/mistnost.png`)" alt='pozadi'> -->
+<!--<img v-bind:src="require(`./../assets/mistnosti/uvodka.png`)" alt='pozadi'> -->
 
 
 <img class="nazev" v-bind:src="require(`./../assets/nazev.png`)" alt='nazev'> 
@@ -43,7 +43,7 @@ export default {
 .pozadi {
     position: relative;
     margin: 0 auto;
-    background-image:url("./../assets/mistnosti/mistnost.png");
+    background-image:url("./../assets/mistnosti/uvodka.png");
     background-repeat: no-repeat;
     width: 1080px;
     height: 720px;
