@@ -109,8 +109,8 @@ export default {
             pozadi:'konec',
             imgPruvodce : 'demonL',
             pozicePanacka:{
-                x: 1,
-                y:1
+                x: 3,
+                y:4
             },
             poziceNPC: {
                 x: 11,
