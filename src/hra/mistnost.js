@@ -101,6 +101,7 @@ export default {
         },
         { 
             pozadi:'konec',
+            pruvodce: 'satyrL',
             pozicePanacka:{
                 x: 3,
                 y:4
