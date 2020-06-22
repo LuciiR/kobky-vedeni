@@ -3,7 +3,7 @@
 
     <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
     <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
-      <!--   <img id= "pruvodce" v-bind:style="pruvodceUrl" alt="pruvodce">  -->
+  <!--  <img id= "pruvodce" v-bind:style="pruvodceUrl" alt="pruvodce">  -->
 
     <div 
         class = "navod" v-if="navod.viditelne" v-html= "navod.text"> 
@@ -64,6 +64,7 @@ export default {
       },
 
      pozadi: 'pravidla',
+     /* pruvodce: 'satyrL', */
 
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
@@ -99,6 +100,7 @@ export default {
 
     this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
     this.pozadi = this.aktualniMistnost.pozadi;
+    /* this.pruvodce = this.aktualniMistnost.pruvodce; */
 
     this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
     this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
@@ -126,7 +128,8 @@ export default {
       return {
         backgroundImage: `url(${npcimage})`
       }
-    } */
+    }
+    */
   
   },
 
@@ -163,6 +166,7 @@ export default {
         }
       this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
       this.pozadi = this.aktualniMistnost.pozadi; 
+      /* this.pruvodce = this.aktualniMistnost.pruvodce; */
 
       this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
       this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
@@ -314,7 +318,7 @@ export default {
 
 #pruvodce {
     position: absolute;
-    /* background-image: url("./../assets/charaktery/satyrL.png"); */
+    background-image: url("./../assets/charaktery/satyrL.png");
 }
 
 #pozadi {
