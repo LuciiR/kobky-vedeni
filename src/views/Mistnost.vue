@@ -23,6 +23,13 @@
 
       <p> {{otazka.odpoved}} </p>
 
+
+<!--  <router-link to = '/uvodka'>
+      <img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko'> 
+      </router-link>
+
+      <audio id="zvukDvere" src="sound/door.wav"></audio> -->
+
     </div> 
 
   </div>
@@ -64,6 +71,7 @@ export default {
         viditelne: false,
         data:null,
         odpoved: null,
+
       },
       zivoty: {
          x:144,
@@ -79,17 +87,13 @@ export default {
          sirka: 216,
          vyska:72,
          element:null
-
       },
+
 
      pozadi: 'pravidla',
 
-    
-     
-
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
-     
 
     };
   },
@@ -102,7 +106,6 @@ export default {
     this.bodiky.element = document.querySelector("#bodiky");
 
     
-
     this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
     this.pozadi = this.aktualniMistnost.pozadi;
     
@@ -112,6 +115,7 @@ export default {
 
     this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
     this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
+
 
     this.umisti(this.panacek);
     this.umisti(this.pruvodce);
@@ -126,13 +130,12 @@ export default {
         backgroundImage: `url(${image})`
       }
     }, 
-    
   },
 
   methods: {
     umisti(objekt){
-      objekt.element.style.left =`${objekt.x}px`; 
-      objekt.element.style.top =`${objekt.y}px`;
+      objekt.element.style.left = `${objekt.x}px`; 
+      objekt.element.style.top = `${objekt.y}px`;
     },
 
     klik(index) {
@@ -147,22 +150,33 @@ export default {
             this.otazka.odpoved = this.otazka.data.reakceNo;
             this.panacek.pocetZivotu--;
         }
-        this.zivoty.element.src =  require(`./../assets/skore/zivot${this.panacek.pocetZivotu}.png`);
-        this.bodiky.element.src =  require(`./../assets/skore/bod${this.panacek.pocetBodu}.png`);
+
+        this.zivoty.element.src = require(`./../assets/skore/zivot${this.panacek.pocetZivotu}.png`);
+        this.bodiky.element.src = require(`./../assets/skore/bod${this.panacek.pocetBodu}.png`);
     },
 
-    zmenMistnost(){
+/*
+    prehrajZvuk(src) {
+            var zvukDvere = new Howl({
+                src: 'sound/door.wav',
+                volume: 0.5,
+            });
+    },
+*/
+
+    zmenMistnost() {
       if (this.aktualniMistnostIndex === 0) {
         this.navod.viditelne = false; 
-      } else {
-        this.otazka.viditelne = false;
-      }
+        } else {
+          this.otazka.viditelne = false;
+        }
 
-      if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
+      if (Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
         this.aktualniMistnostIndex++; 
         } else {
           return false;
         }
+
       this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
       this.pozadi = this.aktualniMistnost.pozadi; 
       this.pruvodce.element.src = require(`./../assets/charaktery/${this.aktualniMistnost.imgPruvodce}.png`);
@@ -193,6 +207,7 @@ export default {
 
       return true;
     },
+
     
     posunPanacka(event) {
       if(event.code === "ArrowLeft"){
@@ -215,6 +230,7 @@ export default {
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
             if(this.zmenMistnost())  {
+              // zvukDvere.play();
               console.log("prošel si dvěřmi")
             } else {
                 console.log("Konec hry")
@@ -240,10 +256,10 @@ export default {
           
           console.log("došel si k pruvodci")
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
-          if(this.zmenMistnost())  {
+          if(this.zmenMistnost()) {
               console.log("prošel si dvěřmi")
             } else {
-                console.log("Konec hry")
+              console.log("Konec hry")
             }
         } 
       } 
@@ -397,6 +413,12 @@ li {
   color: #c27d58
 }
 
-
+.hrat {
+   position: absolute;
+   bottom: 36px;
+   left:468px;
+   width: 144px;
+   height: 72px;
+}
 
 </style>

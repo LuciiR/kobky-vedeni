@@ -208,12 +208,12 @@ export default {
         // místnost - prohra
         { 
             id: 20,
-            uvitani: '"..."',
+            uvitani: 'KONEC HRY. Je mi líto, ale chce to dávat ve škole větší pozor. Ale nezoufej, můžeš to zkusit znovu, stačí kliknout na tlačítko... Přeji ti, ať se příště vede lépe!',
         },
         // místnost - výhra
         { 
             id: 21,
-            uvitani: '<p>Hurááá! Máš za sebou úspěšný průchod</p> <p><strong>KOBKAMA VĚDĚNÍ!</strong> Gratulujeme!</p>',
+            uvitani: '<p>Hurááá! Máš za sebou úspěšný průchod</p> <p><strong>KOBKAMA VĚDĚNÍ!</strong> Gratuluji!</p>',
             nazev: 'Získal jsi: 1 penízek',
             hodnoceni: 'Tvoje hodnost: Pasáček vepřů',
             popis: 'No, něco jsi věděl, ale žádná sláva to nebyla. Pokud to nezlepšíš, můžeš leda tak pást vepře. Život to není moc voňavý, ale zase je to práce ve stále mladém a dynamickém kolektivu!', 
