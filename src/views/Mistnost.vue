@@ -2,8 +2,8 @@
  <div id="pozadi" v-bind:style ="pozadiUrl">
 
     <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
-    <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce"> 
-    <!-- <img id= "pruvodce" v-bind:style="pruvodceUrl" alt="pruvodce"> -->
+    <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">
+      <!--   <img id= "pruvodce" v-bind:style="pruvodceUrl" alt="pruvodce">  -->
 
     <div 
         class = "navod" v-if="navod.viditelne" v-html= "navod.text"> 
@@ -119,11 +119,12 @@ export default {
       return {
         backgroundImage: `url(${image})`
       }
-    }, /*
+    }, 
+    /*
     pruvodceUrl () {
-      const image = require(`@/assets/charaktery/${this.NPC}.png`);
+      const npcimage = require(`@/assets/charaktery/${this.pruvodce}.png`);
       return {
-        backgroundImage: `url(${image})`
+        backgroundImage: `url(${npcimage})`
       }
     } */
   

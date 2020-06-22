@@ -3,6 +3,7 @@ export default {
     mistnost: [ 
         { 
             pozadi:'pravidla',
+            pruvodce: 'satyrL',
             pozicePanacka:{
                 x: 1,
                 y: 4
@@ -25,6 +26,7 @@ export default {
         },
         {
             pozadi: 'kuchyne',
+            pruvodce: 'kuchL',
             pozicePanacka:{
                 x: 1,
                 y: 4
@@ -49,6 +51,7 @@ export default {
         },
         {
             pozadi: 'knihovna',
+            pruvodce: 'knihL',
             pozicePanacka:{
                 x: 1,
                 y: 6
@@ -73,6 +76,7 @@ export default {
         },
         {
             pozadi: 'posilovna',
+            pruvodce: 'cvicL',
             pozicePanacka:{
                 x: 1,
                 y:2
