@@ -23,6 +23,7 @@
 
       <p> {{otazka.odpoved}} </p>
 
+  
     </div> 
 
   </div>
