@@ -22,10 +22,7 @@
       </ul>
 
       <p> {{otazka.odpoved}} </p>
-
-  
     </div> 
-
   </div>
 </template>
 
@@ -47,7 +44,6 @@ export default {
         pocetBodu: 0,
         krok: 72
       },
-
       pruvodce: {
         x: 0,
         y: 0,
@@ -55,17 +51,14 @@ export default {
         vyska: 70,
         element: null,
       },
-
       navod: {
         viditelne: false,
         text: Otazky.otazky[0].uvitani
       },
-
       otazka: {
         viditelne: false,
         data: null,
         odpoved: null,
-
       },
       zivoty: {
          x: 72,
@@ -74,7 +67,6 @@ export default {
          vyska: 72,
          element: null
       },
-
       bodiky: {
          x: 648,
          y: 612,
@@ -82,31 +74,22 @@ export default {
          vyska: 72,
          element: null
       },
-
-
      pozadi: 'pravidla',
-     
-
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
-
-    };
+    }
   },
 
   mounted() {
     document.addEventListener("keydown", this.posunPanacka);
+
     this.panacek.element = document.querySelector("#panacek");
     this.pruvodce.element = document.querySelector("#pruvodce");
     this.zivoty.element = document.querySelector("#zivoty");
     this.bodiky.element = document.querySelector("#bodiky");
 
-    
     this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
     this.pozadi = this.aktualniMistnost.pozadi;
-
-
-    
-    
 
     this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
     this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
@@ -114,12 +97,10 @@ export default {
     this.pruvodce.x = this.aktualniMistnost.poziceNPC.x * Mistnosti.velikostCtverecku;
     this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
 
-
     this.umisti(this.panacek);
     this.umisti(this.pruvodce);
     this.umisti(this.zivoty);
     this.umisti(this.bodiky);
-    
   },
 
   computed: {
@@ -163,22 +144,22 @@ export default {
     zmenMistnost() {
       if (this.aktualniMistnostIndex === 0) {
         this.navod.viditelne = false; 
-        } else {
+      } else {
           this.otazka.viditelne = false;
-        }
+      }
 
       if (Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
         this.aktualniMistnostIndex++; 
-        } else {
+      } else {
           return false;
-        }
+      }
+
+      const zvuk = new Audio(require(`@/assets/sound/door.wav`))
+      zvuk.play()
 
       this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
       this.pozadi = this.aktualniMistnost.pozadi; 
       this.pruvodce.element.src = require(`./../assets/charaktery/${this.aktualniMistnost.imgPruvodce}.png`);
-      
-             
-              
 
       this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
       this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
@@ -187,18 +168,17 @@ export default {
       this.pruvodce.y = this.aktualniMistnost.poziceNPC.y * Mistnosti.velikostCtverecku;
       
       let nahodneCislo = this.aktualniMistnost.cisloMin;
-
       
-      if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
+      if (Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
          nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin) + 1);
          this.otazka.odpoved = null;
       } else {
          nahodneCislo += this.panacek.pocetBodu;
          this.otazka.odpoved = Otazky.otazky[nahodneCislo].popis;
       }
+
       this.otazka.data = Otazky.otazky[nahodneCislo];
     
-
       this.umisti(this.panacek);
       this.umisti(this.pruvodce);
       this.umisti(this.zivoty);
@@ -207,7 +187,6 @@ export default {
       return true;
     },
 
-    
     posunPanacka(event) {
       if(event.code === "ArrowLeft"){
         this.panacek.x -= this.panacek.krok; 
