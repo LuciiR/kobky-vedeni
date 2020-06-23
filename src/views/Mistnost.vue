@@ -1,5 +1,5 @@
 <template>
- <div id="pozadi" v-bind:style ="pozadiUrl">
+  <div id="pozadi" v-bind:style ="pozadiUrl">
 
     <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
     <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">  
@@ -12,7 +12,6 @@
     
     <div class = "otazka" v-if="otazka.viditelne" > 
       <p> {{otazka.data.uvitani}} {{otazka.data.otazka}}</p>
-
       <p> {{otazka.data.nazev}} <br> {{otazka.data.hodnoceni}} </p>
 
       <ul class="odpovedi" v-for="(odpoved, index) in otazka.data.odpovedi" v-bind:key="index">
@@ -26,12 +25,12 @@
   </div>
 </template>
 
-
 <script>
 import Otazky from "@/hra/otazky.js"
 import Mistnosti from "@/hra/mistnost.js"
 
 export default {
+
   data() {
     return {
       panacek: {
@@ -44,6 +43,7 @@ export default {
         pocetBodu: 0,
         krok: 72
       },
+
       pruvodce: {
         x: 0,
         y: 0,
@@ -51,15 +51,18 @@ export default {
         vyska: 70,
         element: null,
       },
+
       navod: {
         viditelne: false,
         text: Otazky.otazky[0].uvitani
       },
+
       otazka: {
         viditelne: false,
         data: null,
         odpoved: null,
       },
+
       zivoty: {
          x: 72,
          y: 612,
@@ -67,6 +70,7 @@ export default {
          vyska: 72,
          element: null
       },
+
       bodiky: {
          x: 648,
          y: 612,
@@ -74,6 +78,7 @@ export default {
          vyska: 72,
          element: null
       },
+
      pozadi: 'pravidla',
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
@@ -125,15 +130,14 @@ export default {
             console.log('yes');
             this.panacek.pocetBodu++;
             this.otazka.odpoved = this.otazka.data.reakceYes;
-
-       
-
+            const zvuk = new Audio(require(`@/assets/sound/spravne.wav`));
+            zvuk.play();
         } else {
             console.log('no');
             this.otazka.odpoved = this.otazka.data.reakceNo;
             this.panacek.pocetZivotu--;
-
-           
+            const zvuk = new Audio(require(`@/assets/sound/spatne.wav`));
+            zvuk.play();
         }
 
         this.zivoty.element.src = require(`./../assets/skore/zivot${this.panacek.pocetZivotu}.png`);
@@ -145,17 +149,17 @@ export default {
       if (this.aktualniMistnostIndex === 0) {
         this.navod.viditelne = false; 
       } else {
-          this.otazka.viditelne = false;
+        this.otazka.viditelne = false;
       }
 
       if (Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
         this.aktualniMistnostIndex++; 
       } else {
-          return false;
+        return false;
       }
 
-      const zvuk = new Audio(require(`@/assets/sound/door.wav`))
-      zvuk.play()
+      const zvuk = new Audio(require(`@/assets/sound/door.wav`));
+      zvuk.play();
 
       this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
       this.pozadi = this.aktualniMistnost.pozadi; 
@@ -188,7 +192,7 @@ export default {
     },
 
     posunPanacka(event) {
-      if(event.code === "ArrowLeft"){
+      if(event.code === "ArrowLeft") {
         this.panacek.x -= this.panacek.krok; 
         let indexSloupce = Math.floor(this.panacek.x / Mistnosti.velikostCtverecku); 
         let indexRadku = Math.floor(this.panacek.y / Mistnosti.velikostCtverecku); 
@@ -197,25 +201,24 @@ export default {
           this.panacek.x += this.panacek.krok
           console.log("Došlo ke srazka");
         } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
-          
 
           if(this.aktualniMistnostIndex === 0) {
             this.navod.viditelne = true;
           } else {
             this.otazka.viditelne = true;
           }
-          
           console.log("došel si k pruvodci")
+
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
             if(this.zmenMistnost())  {
               // zvukDvere.play();
               console.log("prošel si dvěřmi")
             } else {
-                console.log("Konec hry")
+              console.log("Konec hry")
             }
         }
-        this.panacek.element.src = require(`./../assets/charaktery/char1L.png`);
 
+        this.panacek.element.src = require(`./../assets/charaktery/char1L.png`);
       } 
 
       if(event.code === "ArrowUp") {
@@ -231,8 +234,8 @@ export default {
           } else {
             this.otazka.viditelne = true;
           }
-          
           console.log("došel si k pruvodci")
+
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
           if(this.zmenMistnost()) {
               console.log("prošel si dvěřmi")
@@ -250,15 +253,15 @@ export default {
         if(this.aktualniMistnost.matice[indexRadku][indexSloupce]=== 1) {
             this.panacek.y -= this.panacek.krok
             console.log("Došlo ke srazka");
+
         } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
-           
            if(this.aktualniMistnostIndex === 0) {
             this.navod.viditelne = true;
           } else {
             this.otazka.viditelne = true;
           }
-          
           console.log("došel si k pruvodci")
+
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
            if(this.zmenMistnost())  {
              console.log("prošel si dvěřmi")
@@ -275,16 +278,15 @@ export default {
         if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 1) {
             this.panacek.x -= this.panacek.krok
             console.log("Došlo ke srazka");
-        } 
-        else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
-          
+
+        } else if(this.aktualniMistnost.matice[indexRadku][indexSloupce] === 3) {
           if(this.aktualniMistnostIndex === 0) {
             this.navod.viditelne = true;
           } else {
             this.otazka.viditelne = true;
           }
-          
           console.log("došel si k pruvodci")
+
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
           if(this.zmenMistnost())  {
              console.log("prošel si dvěřmi")
@@ -292,11 +294,13 @@ export default {
              console.log("Konec hry")
           }
         } 
+
         this.panacek.element.src = require(`./../assets/charaktery/char1P.png`);
       } 
 
       this.umisti(this.panacek); 
-      this.umisti(this.pruvodce)
+      this.umisti(this.pruvodce);
+
     }
   }
 }
@@ -304,7 +308,6 @@ export default {
 
 
 <style scoped>
-
 #panacek {
     position: absolute;
 }
@@ -356,7 +359,6 @@ export default {
     width: 432px;
     min-height: 432px;
     background-color: #ffe6cc;
-  
     border: #c27d58 8px outset;
     border-radius: 10px;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
