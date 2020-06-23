@@ -10,9 +10,8 @@
     
         <router-link to = '/mistnost'>
         <img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko' v-on:click="play" type="button">
-        <!-- <button v-on:click="play" type="button">Click Me to Play Sound</button> 
-        <audio ref="audioElm" src="./../assets/sound/tlacitko.wav"></audio>-->
         </router-link>
+
     
 
 
@@ -20,17 +19,7 @@
 </template>
 
 <script>
-/*
-export default {
 
-    methods: {
-    play: function(event) {
-      this.$refs.audioElm.play();
-    }
-  } 
-
-}
-*/
 </script>
 
 <style scoped>
