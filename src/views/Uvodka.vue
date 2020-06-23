@@ -26,7 +26,7 @@ export default {
     this.$refs.nazev.style.left = "262px";
     this.$refs.nazev.style.top = "154px";
 
-            console.log('%c Náš mentor Zdeněk s okurkou', 'background: #000; color: #FFD902')
+            console.log('%c Náš super okurkovej tým! Hanka, Zdeněk, Lucka!', 'background: #000; color: #FFD902')
         }
     }
 }
