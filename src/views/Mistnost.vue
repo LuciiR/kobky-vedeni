@@ -371,6 +371,13 @@ export default {
     color: #663300;
 }
 
+.stylotazky {
+  padding: 5px 25px;
+}
+.stylhodnoceni {
+  padding: 5px 25px;
+}
+
 .odpovedi {
     padding: 5px 25px;
     font-size: 18px;
