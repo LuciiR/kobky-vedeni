@@ -1,18 +1,27 @@
 <template>
-    <div class = "pozadi">
-
-        <img class="nazev" v-bind:src="require(`./../assets/nazev.png`)" alt='nazev'> 
+    <div class="pozadi">
+        <img ref="nazev" class="nazev" v-bind:src="require(`@/assets/nazev.png`)" v-on:dblclick="mentor">
 
         <router-link to = '/mistnost'>
-        <img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko' v-on:click="play" type="button">
+            <img class="hrat" v-bind:src="require(`@/assets/tlacitko.png`)" alt='tlacitko' type="button">
         </router-link>
-
     </div>
 </template>
 
 
 <script>
-
+export default {
+    mounted() {
+        console.log('%c Něco se skrývá pod Kobkou vědění', 'background: #000; color: #FFD902')
+    },
+    methods: {
+        mentor() {
+            this.$refs.nazev.src = require(`@/assets/easter1.jpg`);
+            this.$refs.nazev.style.height = "540px"
+            console.log('%c Náš mentor Zdeněk s okurkou', 'background: #000; color: #FFD902')
+        }
+    }
+}
 </script>
 
 
