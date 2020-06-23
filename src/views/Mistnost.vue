@@ -24,12 +24,12 @@
       <p> {{otazka.odpoved}} </p>
 
 
-<!--  <router-link to = '/uvodka'>
+        <!--<router-link to = '/uvodka'>
       <img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko'> 
       </router-link>
 
       
-      <audio ref="audioElm" src='./../assets/sound/pravidla.wav'></audio>
+       <audio ref="audioElm" src='./../assets/sound/pravidla.wav'></audio>
       <audio id="zvukDvere" src="./../assets/sound/door.wav"></audio>-->
       
     </div> 
