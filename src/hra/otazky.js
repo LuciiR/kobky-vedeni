@@ -263,11 +263,11 @@ export default {
             uvitani: '"Vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
             otazka: 's kým sousedí Česká republika?"',
             odpovedi: [
-                'Německo, Polsko, Maďarsko, Slovensko',
+                'Německo, Polsko, Slovensko, Ukrajina',
                 'Polsko, Rakousko, Švýcarsko, Slovensko',
                 'Slovensko, Německo, Rakousko, Polsko',
             ],
-            spravna: 0,
+            spravna: 2,
             reakceYes: '"No výborně! Vidím, že jsi velký cestovatel. Tak šťastnou cestu!"',
             reakceNo: '"Raději běž dál, moc jsi toho ještě neprocestoval ani na mapě jak vidím."',
         },
