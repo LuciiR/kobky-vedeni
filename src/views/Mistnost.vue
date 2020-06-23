@@ -11,8 +11,9 @@
     </div>
     
     <div class = "otazka" v-if="otazka.viditelne" > 
-      <p> {{otazka.data.uvitani}} {{otazka.data.otazka}}</p>
-      <p> {{otazka.data.nazev}} <br> {{otazka.data.hodnoceni}} </p>
+      
+      <p> {{otazka.data.nazev}} <br> {{otazka.data.hodnoceni}}
+          {{otazka.data.uvitani}} {{otazka.data.otazka}}  </p>
 
       <ul class="odpovedi" v-for="(odpoved, index) in otazka.data.odpovedi" v-bind:key="index">
         <li> 
@@ -24,6 +25,7 @@
     </div> 
   </div>
 </template>
+
 
 <script>
 import Otazky from "@/hra/otazky.js"
@@ -398,5 +400,4 @@ li {
    width: 144px;
    height: 72px;
 }
-
 </style>
