@@ -3,7 +3,7 @@
 
     <img id= "panacek" v-bind:src="require(`./../assets/charaktery/char1P.png`)" alt="panacek">
     <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">  
-    <img id= "zivoty" v-bind:src="require(`./../assets/skore/zivot3.png`)" alt="zivoty"> 
+    <img id= "zivoty" v-bind:src="require(`./../assets/skore/zivot5.png`)" alt="zivoty"> 
     <img id= "bodiky" v-bind:src="require(`./../assets/skore/bod0.png`)" alt="bodiky">  
 
     <div 
@@ -51,44 +51,44 @@ export default {
         sirka: 70,
         vyska: 70,
         element: null,
-        pocetZivotu: 3,
+        pocetZivotu: 5,
         pocetBodu: 0,
         krok: 72
       },
 
       pruvodce: {
-        x:0,
-        y:0,
-        sirka:70,
-        vyska:70,
-        element:null,
+        x: 0,
+        y: 0,
+        sirka: 70,
+        vyska: 70,
+        element: null,
       },
 
       navod: {
-        viditelne : false,
+        viditelne: false,
         text: Otazky.otazky[0].uvitani
       },
 
       otazka: {
         viditelne: false,
-        data:null,
+        data: null,
         odpoved: null,
 
       },
       zivoty: {
-         x:144,
-         y:612,
+         x: 72,
+         y: 612,
          sirka: 216,
-         vyska:72,
-         element:null
+         vyska: 72,
+         element: null
       },
 
       bodiky: {
-         x:720,
-         y:612,
+         x: 648,
+         y: 612,
          sirka: 216,
-         vyska:72,
-         element:null
+         vyska: 72,
+         element: null
       },
 
 
@@ -219,7 +219,7 @@ export default {
 
       
       if(Mistnosti.mistnost[this.aktualniMistnostIndex + 1]) {
-         nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin)+1);
+         nahodneCislo += Math.floor(Math.random() * (this.aktualniMistnost.cisloMax - this.aktualniMistnost.cisloMin) + 1);
          this.otazka.odpoved = null;
       } else {
          nahodneCislo += this.panacek.pocetBodu;
