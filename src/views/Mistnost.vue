@@ -372,10 +372,11 @@ export default {
 }
 
 .stylotazky {
-  padding: 5px 25px;
+  padding-top: 25px;
 }
 .stylhodnoceni {
-  padding: 5px 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .odpovedi {
