@@ -341,7 +341,8 @@ export default {
         // místnost - prohra
         { 
             id: 26,
-            uvitani: 'KONEC HRY. Je mi líto, ale chce to dávat ve škole větší pozor. Ale nezoufej, můžeš to zkusit znovu, stačí kliknout na tlačítko... Přeji ti, ať se příště vede lépe!',
+            uvitani: 'KONEC HRY',
+            hodnoceni: 'Je mi líto, ale chce to dávat ve škole větší pozor. Ale nezoufej, můžeš to zkusit znovu, stačí kliknout na tlačítko... Přeji ti, ať se příště vede lépe!',
         },
         // místnost - výhra
         { 
