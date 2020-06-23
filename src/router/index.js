@@ -16,8 +16,8 @@ Vue.use(VueRouter)
   
   {
     path: '/uvodka',
-    //name: 'Uvodka',
-    //component: Uvodka
+    name: 'Uvodka',
+    component: Uvodka
     
     
     
