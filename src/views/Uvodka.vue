@@ -2,24 +2,35 @@
 
 <div class = "pozadi">
 
-<!--<img v-bind:src="require(`./../assets/mistnosti/uvodka.png`)" alt='pozadi'> -->
+    <!--<img v-bind:src="require(`./../assets/mistnosti/uvodka.png`)" alt='pozadi'> -->
 
 
-<img class="nazev" v-bind:src="require(`./../assets/nazev.png`)" alt='nazev'> 
+    <img class="nazev" v-bind:src="require(`./../assets/nazev.png`)" alt='nazev'> 
 
-<router-link to = '/mistnost'>
-<img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko'> 
-</router-link>
+    
+        <router-link to = '/mistnost'>
+        <img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko' v-on:click="play" type="button">
+        <!-- <button v-on:click="play" type="button">Click Me to Play Sound</button> 
+        <audio ref="audioElm" src="./../assets/sound/tlacitko.wav"></audio>-->
+        </router-link>
+    
 
 
 </div>
 </template>
 
 <script>
+/*
 export default {
-  
+
+    methods: {
+    play: function(event) {
+      this.$refs.audioElm.play();
+    }
+  } 
 
 }
+*/
 </script>
 
 <style scoped>

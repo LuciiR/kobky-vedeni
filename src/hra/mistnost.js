@@ -1,11 +1,13 @@
 export default {
-    velikostCtverecku : 72,
+
+    velikostCtverecku: 72,
     mistnost: [ 
         { 
             pozadi:'pravidla',
-            imgPruvodce : 'satyrL',
+            imgPruvodce: 'satyrL',
+            prehrajZvuk: 'pravidla',
             
-            pozicePanacka:{
+            pozicePanacka: {
                 x: 1,
                 y: 4,
             },
@@ -27,9 +29,10 @@ export default {
         },
         {
             pozadi: 'kuchyne',
-            imgPruvodce : 'kuchL',
+            imgPruvodce: 'kuchL',
+            prehrajZvuk: 'kuchar',
             
-            pozicePanacka:{
+            pozicePanacka: {
                 x: 1,
                 y: 4,
             },
@@ -39,8 +42,8 @@ export default {
                 y: 6,
             },
             
-            cisloMin: 0,
-            cisloMax: 4,
+            cisloMin: 1,
+            cisloMax: 5,
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 [1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
@@ -55,9 +58,10 @@ export default {
         },
         {
             pozadi: 'knihovna',
-            imgPruvodce : 'knihL',
+            imgPruvodce: 'knihL',
+            prehrajZvuk: 'knihovnik',
            
-            pozicePanacka:{
+            pozicePanacka: {
                 x: 1,
                 y: 6,
             },
@@ -65,8 +69,8 @@ export default {
                 x: 10,
                 y: 2,
             },
-            cisloMin: 5,
-            cisloMax: 9,
+            cisloMin: 6,
+            cisloMax: 10,
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 3, 1, 2, 1, 1],
@@ -81,9 +85,10 @@ export default {
         },
         {
             pozadi: 'posilovna',
-            imgPruvodce : 'cvicL',
+            imgPruvodce: 'cvicL',
+            prehrajZvuk: 'svalovec',
             
-            pozicePanacka:{
+            pozicePanacka: {
                 x: 1,
                 y:2,
             },
@@ -91,8 +96,8 @@ export default {
                 x: 13,
                 y: 5,
             },
-            cisloMin: 10,
-            cisloMax: 14,
+            cisloMin: 11,
+            cisloMax: 15,
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -108,7 +113,9 @@ export default {
         { 
             pozadi:'konec',
             imgPruvodce : 'satyrL',
-            pozicePanacka:{
+            prehrajZvuk: '',
+
+            pozicePanacka: {
                 x: 3,
                 y: 4
             },
@@ -117,7 +124,7 @@ export default {
                 y: 4,
             },
             cisloMin: 16,
-            cisloMax: 19,
+            cisloMax: 20,
             
             matice: [
                 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],

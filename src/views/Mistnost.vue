@@ -28,8 +28,10 @@
       <img class="hrat" v-bind:src="require(`./../assets/tlacitko.png`)" alt='tlacitko'> 
       </router-link>
 
-      <audio id="zvukDvere" src="sound/door.wav"></audio> -->
-
+      
+      <audio ref="audioElm" src='./../assets/sound/pravidla.wav'></audio>
+      <audio id="zvukDvere" src="./../assets/sound/door.wav"></audio>-->
+      
     </div> 
 
   </div>
@@ -64,7 +66,7 @@ export default {
 
       navod: {
         viditelne : false,
-        text: Otazky.otazky[15].uvitani
+        text: Otazky.otazky[0].uvitani
       },
 
       otazka: {
@@ -91,6 +93,7 @@ export default {
 
 
      pozadi: 'pravidla',
+     //zvuk: '',
 
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
@@ -108,6 +111,9 @@ export default {
     
     this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
     this.pozadi = this.aktualniMistnost.pozadi;
+
+
+    // this.zvuk = this.aktualniMistnost.prehrajZvuk;
     
 
     this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
@@ -121,6 +127,7 @@ export default {
     this.umisti(this.pruvodce);
     this.umisti(this.zivoty);
     this.umisti(this.bodiky);
+    // this.play(this.zvuk);
   },
 
   computed: {
@@ -145,23 +152,40 @@ export default {
             console.log('yes');
             this.panacek.pocetBodu++;
             this.otazka.odpoved = this.otazka.data.reakceYes;
+
+            // this.zvuk.play()
+
         } else {
             console.log('no');
             this.otazka.odpoved = this.otazka.data.reakceNo;
             this.panacek.pocetZivotu--;
+
+            // this.zvuk.play()
+
         }
 
         this.zivoty.element.src = require(`./../assets/skore/zivot${this.panacek.pocetZivotu}.png`);
         this.bodiky.element.src = require(`./../assets/skore/bod${this.panacek.pocetBodu}.png`);
     },
 
+
 /*
+    play(){
+                this.zvukDvere.play();
+            } ,
+
     prehrajZvuk(src) {
             var zvukDvere = new Howl({
                 src: 'sound/door.wav',
                 volume: 0.5,
             });
     },
+    playSound (sound) {
+      if(sound) {
+        var audio = new Audio(sound);
+        audio.play();
+      }
+    }
 */
 
     zmenMistnost() {
@@ -181,6 +205,10 @@ export default {
       this.pozadi = this.aktualniMistnost.pozadi; 
       this.pruvodce.element.src = require(`./../assets/charaktery/${this.aktualniMistnost.imgPruvodce}.png`);
       
+              //this.zvuk.src = require(`./../assets/sound/${this.aktualniMistnost.prehrajZvuk}.wav`);
+              //var zvuk = new Audio(`./../assets/sound/${this.aktualniMistnost.prehrajZvuk}.wav`)
+              
+
       this.panacek.x = this.aktualniMistnost.pozicePanacka.x * Mistnosti.velikostCtverecku;
       this.panacek.y = this.aktualniMistnost.pozicePanacka.y * Mistnosti.velikostCtverecku;
 

@@ -2,6 +2,11 @@ export default {
 
     otazky: [
 
+        // 0.místnost - pravidla
+        { 
+            id: 0,
+            uvitani: '<p><strong>Vítej učedníku</strong> na dobrodružné cestě do našeho podzemí! Ovšem pozor, slávy a bohatství u nás nedosáhneš mečem či kouzlem, ale svými <strong>vědomostmi!</strong></p> <p>V každé místnosti, kterou navštívíš, tě bude čekat místní obyvatel s otázkou, která ho moc trápí. <strong>Když správně odpovíš, odmění tě zlaťákem, ovšem když se spleteš, nejspíš tě vezme něčím po hlavě</strong> a to trochu zabolí! Dostaneš se k němu jednoduše pomocí <strong>šipek na klávesnici</strong>. Některé místnosti jsou trochu záludné a asi se trochu projdeš.</p> <p>Tak hodně zdaru a <strong>vzhůru dolů do podzemí!</strong></p>',
+        },
         // 1.místnost - kuchyně
         { 
             id: 1,
@@ -200,47 +205,42 @@ export default {
             reakceYes: '"To není vůbec špatné... Možná si tě najmu do svého vojska. Válečník musí být silný i chytrý!"',
             reakceNo: '"Ty bys mi nebyl moc platný... Radši jdi, než si z tebe udělám boxovací pytel!"',
         },
-        // 0.místnost - pravidla
-        { 
-            id: 16,
-            uvitani: '<p><strong>Vítej učedníku</strong> na dobrodružné cestě do našeho podzemí! Ovšem pozor, slávy a bohatství u nás nedosáhneš mečem či kouzlem, ale svými <strong>vědomostmi!</strong></p> <p>V každé místnosti, kterou navštívíš, tě bude čekat místní obyvatel s otázkou, která ho moc trápí. <strong>Když správně odpovíš, odmění tě zlaťákem, ovšem když se spleteš, nejspíš tě vezme něčím po hlavě</strong> a to trochu zabolí! Dostaneš se k němu jednoduše pomocí <strong>šipek na klávesnici</strong>. Některé místnosti jsou trochu záludné a asi se trochu projdeš.</p> <p>Tak hodně zdaru a <strong>vzhůru dolů do podzemí!</strong></p>',
-        },
         // místnost - prohra
         { 
-            id: 20,
+            id: 16,
             uvitani: 'KONEC HRY. Je mi líto, ale chce to dávat ve škole větší pozor. Ale nezoufej, můžeš to zkusit znovu, stačí kliknout na tlačítko... Přeji ti, ať se příště vede lépe!',
         },
         // místnost - výhra
         { 
-            id: 21,
+            id: 17,
             uvitani: '<p>Hurááá! Máš za sebou úspěšný průchod</p> <p><strong>KOBKAMA VĚDĚNÍ!</strong> Gratuluji!</p>',
             nazev: 'Získal jsi: 1 penízek',
             hodnoceni: 'Tvoje hodnost: Pasáček vepřů',
             popis: 'No, něco jsi věděl, ale žádná sláva to nebyla. Pokud to nezlepšíš, můžeš leda tak pást vepře. Život to není moc voňavý, ale zase je to práce ve stále mladém a dynamickém kolektivu!', 
         },
         {
-            id: 22,
+            id: 18,
             uvitani: '<p>Hurááá! Máš za sebou úspěšný průchod</p> <p><strong>KOBKAMA VĚDĚNÍ!</strong> Gratulujeme!</p>',
             nazev: 'Získal jsi: 2 penízky',
             hodnoceni: 'Tvoje hodnost: Zbrojnoš',
             popis: 'No hele, podívej, …řadový zbrojnoš nemusí být úplná bedna, přeci jen nasazování Španělských botiček na povozy není zas až tak náročné. Ale taky nemůže být úplný prosťáček, aby ho každý ošálil a utekl mu lecjaký zloduch, co se pokouší přijít do království ukrást princeznu nebo uhranout nějakou tu krávu. Nebo naopak. Mohlo by to být lepší, ale dva bodíky tě dostanou alespoň na tuto příčku.',
         },
         {    
-            id: 23,
+            id: 19,
             uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
             nazev: 'Získal jsi 3 penízky',
             hodnoceni: 'Tvoje hodnost: Kupec',
             popis: 'Povolání kupce je trochu adrenalinový sport. Kde kdo se vás snaží oškubat a to jak ze zákazníků, tak od vrchnosti, a vy se musíte hodně otáčet, abyste neskončili chudí jako kostelní myš. Dobrý kupec musí být bystré mysli (nikoliv však Müsli) a orientovat se alespoň trochu v kde čem, aby mohl také s kde čím obchodovat. Teď už jen kde ten “Kdečem” sehnat a dobře na něm vydělat.',
         },
         {    
-            id: 24,
+            id: 20,
             uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
             nazev: 'Získal jsi 4 penízky',
             hodnoceni: 'Tvoje hodnost: Rytíř',
             popis: 'Rytíř je velice odpovědná funkce. Kde kdo si jej představí jen jako přerostlou plechovku od guláše, co někde máchá mečem. To však není úplně pravda. Rytíř je královým prvním mužem, který nejen bojuje, ale obrací se na něj i královští poddaní, aby je (třeba zrušit) rozsoudil nebo jim všelijak pomohl. A on by se toho měl pro krále zhostit, a to se ctí! Kdyby ne, mohl by taky skončit jak dlouhý, tak široký ve sběrných surovinách. Ale to tebe nečeká. Chyběl ti jen malý krůček k nejlepšímu výsledku, takže se s klidem můžeš počítat mezi vážené rytíře šišatého stolu. A to už něco znamená!',
         },
         {    
-            id: 25,
+            id: 21,
             uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
             nazev: 'Získal jsi 5 penízků',
             hodnoceni: 'Tvoje hodnost: Král',
