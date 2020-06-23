@@ -112,7 +112,7 @@ export default {
     pozadiUrl () {
       const image = require(`@/assets/mistnosti/${this.pozadi}.png`);
       return {
-        backgroundImage: `url(${image})`
+        backgroundImage: `url(${image}), linear-gradient(to bottom, #ADB2B6, #ABAEB3)`
       }
     }, 
   },
@@ -327,7 +327,8 @@ export default {
 #pozadi {
     position: relative;
     margin: 0 auto;
-    background-image: url("./../assets/mistnosti/pravidla.png");
+    background-image: url("./../assets/mistnosti/pravidla.png"), linear-gradient(to bottom, #ADB2B6, #ABAEB3);
+    background-color: slategray;
     background-repeat: no-repeat;
     width: 1080px;
     height: 720px;
