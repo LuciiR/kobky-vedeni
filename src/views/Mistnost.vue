@@ -12,8 +12,10 @@
     
     <div class = "otazka" v-if="otazka.viditelne" > 
       
-      <p> {{otazka.data.nazev}} <br> {{otazka.data.hodnoceni}}
-          {{otazka.data.uvitani}} {{otazka.data.otazka}}  </p>
+      <p> 
+          {{otazka.data.uvitani}} {{otazka.data.otazka}} 
+          {{otazka.data.nazev}} <br> {{otazka.data.hodnoceni}}
+      </p>
 
       <ul class="odpovedi" v-for="(odpoved, index) in otazka.data.odpovedi" v-bind:key="index">
         <li> 
@@ -367,7 +369,6 @@ export default {
     padding: 5px 25px;
     font-size: 18px;
     font-family: 'Balsamiq Sans', cursive;
-
     text-align: justify;
     color: #663300;
 }
@@ -376,7 +377,6 @@ export default {
     padding: 5px 25px;
     font-size: 18px;
     font-family: 'Balsamiq Sans', cursive;
-    /*font-family:'Courier New', Courier, monospace;*/
     text-align: center;
     color: #663300;
 }

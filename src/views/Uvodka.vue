@@ -14,10 +14,18 @@ export default {
     mounted() {
         console.log('%c Něco se skrývá pod Kobkou vědění', 'background: #000; color: #FFD902')
     },
+
     methods: {
         mentor() {
-            this.$refs.nazev.src = require(`@/assets/easter1.jpg`);
-            this.$refs.nazev.style.height = "540px"
+            this.$refs.nazev.src = require(`@/assets/easteregg_my.png`);
+            this.$refs.nazev.style.height = "324px";
+            this.$refs.nazev.style.width = "540px";
+            this.$refs.nazev.style.border = "outset 8px #c27d58";
+            this.$refs.nazev.style.justify = "center";
+            this.$refs.nazev.style.position = "absolute";
+    this.$refs.nazev.style.left = "262px";
+    this.$refs.nazev.style.top = "154px";
+
             console.log('%c Náš mentor Zdeněk s okurkou', 'background: #000; color: #FFD902')
         }
     }
@@ -39,7 +47,7 @@ export default {
    bottom: 36px;
    left: 468px;
    width: 144px;
-   height: 72px;
+   height: 73px;
 }
 
 .pozadi {

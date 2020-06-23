@@ -10,7 +10,5 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet');
 
-body {
-  background-color: slategray;
-}
+
 </style>
