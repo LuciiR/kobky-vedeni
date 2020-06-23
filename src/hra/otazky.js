@@ -346,14 +346,14 @@ export default {
         // místnost - výhra
         { 
             id: 27,
-            uvitani: '<p>Hurááá! Máš za sebou úspěšný průchod</p> <p><strong>KOBKAMA VĚDĚNÍ!</strong> Gratuluji!</p>',
+            uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratuluji!',
             nazev: 'Získal jsi: 1 penízek',
             hodnoceni: 'Tvoje hodnost: Pasáček vepřů',
             popis: 'No, něco jsi věděl, ale žádná sláva to nebyla. Pokud to nezlepšíš, můžeš leda tak pást vepře. Život to není moc voňavý, ale zase je to práce ve stále mladém a dynamickém kolektivu!', 
         },
         {
             id: 28,
-            uvitani: '<p>Hurááá! Máš za sebou úspěšný průchod</p> <p><strong>KOBKAMA VĚDĚNÍ!</strong> Gratulujeme!</p>',
+            uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
             nazev: 'Získal jsi: 2 penízky',
             hodnoceni: 'Tvoje hodnost: Zbrojnoš',
             popis: 'No hele, podívej, …řadový zbrojnoš nemusí být úplná bedna, přeci jen nasazování Španělských botiček na povozy není zas až tak náročné. Ale taky nemůže být úplný prosťáček, aby ho každý ošálil a utekl mu lecjaký zloduch, co se pokouší přijít do království ukrást princeznu nebo uhranout nějakou tu krávu. Nebo naopak. Mohlo by to být lepší, ale dva bodíky tě dostanou alespoň na tuto příčku.',
