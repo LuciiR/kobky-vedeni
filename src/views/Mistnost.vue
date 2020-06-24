@@ -23,7 +23,7 @@
 
       <p> {{otazka.data.nazev}} <br> {{otazka.data.hodnoceni}} </p>
       <p> {{otazka.odpoved}} </p>
-      
+
     </div> 
   </div>
 </template>
@@ -223,7 +223,6 @@ export default {
 
         } else if (this.aktualniMistnost.matice[indexRadku][indexSloupce] === 2) {
             if(this.zmenMistnost())  {
-              // zvukDvere.play();
               console.log("prošel si dvěřmi")
             } else {
               console.log("Konec hry")
