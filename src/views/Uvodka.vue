@@ -12,7 +12,7 @@
 <script>
 export default {
     mounted() {
-        console.log('%c Něco se skrývá pod Kobkou vědění', 'background: #000; color: #FFD902')
+        console.log('%c Něco se skrývá pod Kobkou vědění ', 'background: #000; color: #FFD902')
     },
 
     methods: {
@@ -23,10 +23,10 @@ export default {
             this.$refs.nazev.style.border = "outset 8px #c27d58";
             this.$refs.nazev.style.justify = "center";
             this.$refs.nazev.style.position = "absolute";
-    this.$refs.nazev.style.left = "262px";
-    this.$refs.nazev.style.top = "154px";
+            this.$refs.nazev.style.left = "262px";
+            this.$refs.nazev.style.top = "154px";
 
-            console.log('%c Náš super okurkovej tým! Hanka, Zdeněk, Lucka!', 'background: #000; color: #FFD902')
+            console.log('%c Náš super okurkovej tým! Hanka, Zdeněk, Lucka! ', 'background: #000; color: #FFD902')
         }
     }
 }

@@ -90,8 +90,8 @@ export default {
             prehrajZvuk: 'svalovec',
             
             pozicePanacka: {
-                x: 1,
-                y:2,
+                x: 2,
+                y: 6,
             },
             poziceNPC: {
                 x: 13,

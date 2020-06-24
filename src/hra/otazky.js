@@ -142,8 +142,8 @@ export default {
         // 3.místnost - posilovna
         { 
             id: 11,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď... ',
-            otazka: 'Znáš naši nejznámější rychlobruslařku?"',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            otazka: 'znáš naši nejznámější rychlobruslařku?"',
             odpovedi: [
                 'Gabriela Koukalová',
                 'Ester Ledecká',
@@ -155,12 +155,12 @@ export default {
         },
         { 
             id: 12,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď... ',
-            otazka: 'Jaké barvy mají olympijské kruhy:"',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            otazka: 'jaké barvy mají olympijské kruhy:"',
             odpovedi: [
-                'červená, modrá, žlutá, zelená, černá',
-                'modrá, červená, fialová, černá, žlutá',
-                'zelená, hnědá, žlutá, modrá, červená',
+                'červená-modrá-žlutá-zelená-černá',
+                'modrá-červená-fialová-černá-žlutá',
+                'zelená-hnědá-žlutá-modrá-červená',
             ],
             spravna: 0,
             reakceYes: '"To není vůbec špatné... Možná si tě najmu do svého vojska. Válečník musí být silný i chytrý!"',
@@ -168,8 +168,8 @@ export default {
         },
         { 
             id: 13,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď... ',
-            otazka: 'V Brně hraje známý hokejový tým - tušíš, jak se jmenuje?"',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            otazka: 'v Brně hraje známý hokejový tým - tušíš, jak se jmenuje?"',
             odpovedi: [
                 'HC Oceláři',
                 'HC Sparta',
@@ -181,8 +181,8 @@ export default {
         },
         { 
             id: 14,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď... ',
-            otazka: 'Jaká disciplína nepatří do atletiky:"',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            otazka: 'jaká disciplína nepatří do atletiky:"',
             odpovedi: [
                 'skok do dálky',
                 'plavání',
@@ -194,8 +194,8 @@ export default {
         },
         { 
             id: 15,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď... ',
-            otazka: 'Víš jaký sport dělá Ester Ledecká?"',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            otazka: 'víš jaký sport dělá Ester Ledecká?"',
             odpovedi: [
                 'Snowboard a alpské lyže',
                 'Skok do dálky a běh',
@@ -371,7 +371,7 @@ export default {
             uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
             nazev: 'Získal jsi 4 penízky',
             hodnoceni: 'Tvoje hodnost: Rytíř',
-            popis: 'Rytíř je velice odpovědná funkce. Kde kdo si jej představí jen jako přerostlou plechovku od guláše, co někde máchá mečem. To však není úplně pravda. Rytíř je královým prvním mužem, který nejen bojuje, ale obrací se na něj i královští poddaní, aby je (třeba zrušit) rozsoudil nebo jim všelijak pomohl. A on by se toho měl pro krále zhostit, a to se ctí! Kdyby ne, mohl by taky skončit jak dlouhý, tak široký ve sběrných surovinách. Ale to tebe nečeká. Chyběl ti jen malý krůček k nejlepšímu výsledku, takže se s klidem můžeš počítat mezi vážené rytíře šišatého stolu. A to už něco znamená!',
+            popis: 'Rytíř je velice odpovědná funkce. Kde kdo si jej představí jen jako přerostlou plechovku od guláše, co někde máchá mečem. Pche. Rytíř je královým prvním mužem, který nejen bojuje, ale obrací se na něj i královští poddaní, aby je rozsoudil nebo jim všelijak pomohl. A on by se toho měl pro krále zhostit, a to se ctí! Kdyby ne, mohl by taky skončit jak dlouhý, tak široký ve sběrných surovinách. Ale to tebe nečeká. Chyběl ti jen malý krůček k nejlepšímu výsledku, takže se s klidem můžeš počítat mezi vážené rytíře šišatého stolu. A to už něco znamená!',
         },
         {    
             id: 31,
