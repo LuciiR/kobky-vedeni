@@ -5,6 +5,7 @@
     <img id= "pruvodce" v-bind:src="require(`./../assets/charaktery/satyrL.png`)" alt="pruvodce">  
     <img id= "zivoty" v-bind:src="require(`./../assets/skore/zivot5.png`)" alt="zivoty"> 
     <img id= "bodiky" v-bind:src="require(`./../assets/skore/bod0.png`)" alt="bodiky">  
+    <img id= "ikonka" src="./../assets/charaktery/char1P.png" alt="panacek">
 
     <div 
         class = "navod" v-if="navod.viditelne" v-html= "navod.text"> 
@@ -81,6 +82,11 @@ export default {
          element: null
       },
 
+      ikonka: {
+        x: 508,
+        y: 612,
+      },
+
      pozadi: 'pravidla',
      aktualniMistnost: null,
      aktualniMistnostIndex: 0,
@@ -94,6 +100,7 @@ export default {
     this.pruvodce.element = document.querySelector("#pruvodce");
     this.zivoty.element = document.querySelector("#zivoty");
     this.bodiky.element = document.querySelector("#bodiky");
+    this.ikonka.element = document.querySelector('#ikonka');
 
     this.aktualniMistnost = Mistnosti.mistnost[this.aktualniMistnostIndex];
     this.pozadi = this.aktualniMistnost.pozadi;
@@ -108,6 +115,7 @@ export default {
     this.umisti(this.pruvodce);
     this.umisti(this.zivoty);
     this.umisti(this.bodiky);
+    this.umisti(this.ikonka);
   },
 
   computed: {
@@ -189,6 +197,7 @@ export default {
       this.umisti(this.pruvodce);
       this.umisti(this.zivoty);
       this.umisti(this.bodiky);
+      this.umisti(this.ikonka);
 
       return true;
     },
@@ -326,13 +335,20 @@ export default {
   position: absolute;
 }
 
+#ikonka {
+  position: absolute;
+}
+
 #pozadi {
     position: relative;
     margin: 0 auto;
+    margin-top: 25px;
+    box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.7);
     background-image: url("./../assets/mistnosti/pravidla.png");
     background-repeat: no-repeat;
     width: 1080px;
     height: 720px;
+    
 }
 
 .navod {

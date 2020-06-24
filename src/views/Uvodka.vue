@@ -53,6 +53,8 @@ export default {
 .pozadi {
     position: relative;
     margin: 0 auto;
+    margin-top: 25px;
+    box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.7);
     background-image: url("./../assets/mistnosti/uvodka.png");
     background-repeat: no-repeat;
     width: 1080px;

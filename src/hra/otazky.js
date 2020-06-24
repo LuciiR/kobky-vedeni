@@ -5,7 +5,7 @@ export default {
         // 0.místnost - pravidla
         { 
             id: 0,
-            uvitani: '<p><strong>Vítej učedníku</strong> na dobrodružné cestě do našeho podzemí! Ovšem pozor, slávy a bohatství u nás nedosáhneš mečem či kouzlem, ale svými <strong>vědomostmi!</strong></p> <p>V každé místnosti, kterou navštívíš, tě bude čekat místní obyvatel s otázkou, která ho moc trápí. <strong>Když správně odpovíš, odmění tě zlaťákem, ovšem když se spleteš, nejspíš tě vezme něčím po hlavě</strong> a to trochu zabolí! Dostaneš se k němu jednoduše pomocí <strong>šipek na klávesnici</strong>. Některé místnosti jsou trochu záludné a asi se trochu projdeš.</p> <p>Tak hodně zdaru a <strong>vzhůru dolů do podzemí!</strong></p>',
+            uvitani: '<p><strong>Vítej učedníku</strong> na dobrodružné cestě do našeho podzemí! Ovšem pozor, slávy a bohatství u nás nedosáhneš mečem či kouzlem, ale svými <strong>vědomostmi!</strong></p> <p>V každé místnosti, kterou navštívíš, tě bude čekat místní obyvatel s otázkou, která ho moc trápí. Jdi k němu a <strong>když správně odpovíš, odmění tě zlaťákem, ovšem když se spleteš, nejspíš tě vezme něčím po hlavě</strong> a to trochu zabolí! Pohybuj se pomocí <strong>šipek na klávesnici</strong>. Některé místnosti jsou trochu záludné a asi se trochu projdeš.</p> <p>Tak hodně zdaru a <strong>vzhůru dolů do podzemí!</strong></p>',
         },
         // 1.místnost - kuchyně
         { 
@@ -142,7 +142,7 @@ export default {
         // 3.místnost - posilovna
         { 
             id: 11,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď - ',
             otazka: 'znáš naši nejznámější rychlobruslařku?"',
             odpovedi: [
                 'Gabriela Koukalová',
@@ -155,7 +155,7 @@ export default {
         },
         { 
             id: 12,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď - ',
             otazka: 'jaké barvy mají olympijské kruhy:"',
             odpovedi: [
                 'červená-modrá-žlutá-zelená-černá',
@@ -168,8 +168,8 @@ export default {
         },
         { 
             id: 13,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
-            otazka: 'v Brně hraje známý hokejový tým - tušíš, jak se jmenuje?"',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď - ',
+            otazka: 'v Brně hraje známý hokejový tým, tušíš, jak se jmenuje?"',
             odpovedi: [
                 'HC Oceláři',
                 'HC Sparta',
@@ -181,7 +181,7 @@ export default {
         },
         { 
             id: 14,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď - ',
             otazka: 'jaká disciplína nepatří do atletiky:"',
             odpovedi: [
                 'skok do dálky',
@@ -194,7 +194,7 @@ export default {
         },
         { 
             id: 15,
-            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď: ',
+            uvitani: '"5, 6, 7... Ehm... teda 98, 99, 100! Uff, takové svaly budeš mít jednou taky, ale není důležité trénovat jen tělo, ale i mozek! Schválně, jestli budeš znát odpověď - ',
             otazka: 'víš jaký sport dělá Ester Ledecká?"',
             odpovedi: [
                 'Snowboard a alpské lyže',
@@ -208,7 +208,7 @@ export default {
         // 4.místnost - kartograf
         { 
             id: 16,
-            uvitani: '"Vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Uf, ta podzemní voda mi zmáčela moje vzácné mapy! Musím je opravit. Poraď mi, ',
             otazka: 'kde pramení Vltava?"',
             odpovedi: [
                 'Šumava',
@@ -221,7 +221,7 @@ export default {
         },
         { 
             id: 17,
-            uvitani: '"Vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Uf, ta podzemní voda mi zmáčela moje vzácné mapy! Musím je opravit. Poraď mi, ',
             otazka: 'jaká je nejvyšší hora Jeseníků?"',
             odpovedi: [
                 'Lysá hora',
@@ -234,7 +234,7 @@ export default {
         },
         { 
             id: 18,
-            uvitani: '"Vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Uf, ta podzemní voda mi zmáčela moje vzácné mapy! Musím je opravit. Poraď mi, ',
             otazka: 'která řeka ústí do moře?"',
             odpovedi: [
                 'Labe',
@@ -247,7 +247,7 @@ export default {
         },
         { 
             id: 19,
-            uvitani: '"Vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Uf, ta podzemní voda mi zmáčela moje vzácné mapy! Musím je opravit. Poraď mi, ',
             otazka: 'jaké je hlavní město Austrálie"',
             odpovedi: [
                 'Sydney',
@@ -260,12 +260,12 @@ export default {
         },
         { 
             id: 20,
-            uvitani: '"Vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Uf, ta podzemní voda mi zmáčela moje vzácné mapy! Musím je opravit. Poraď mi, ',
             otazka: 's kým sousedí Česká republika?"',
             odpovedi: [
-                'Německo, Polsko, Slovensko, Ukrajina',
-                'Polsko, Rakousko, Švýcarsko, Slovensko',
-                'Slovensko, Německo, Rakousko, Polsko',
+                'Německo-Polsko-Slovensko-Ukrajina',
+                'Polsko-Rakousko-Švýcarsko-Slovensko',
+                'Slovensko-Německo-Rakousko-Polsko',
             ],
             spravna: 2,
             reakceYes: '"No výborně! Vidím, že jsi velký cestovatel. Tak šťastnou cestu!"',
@@ -274,7 +274,7 @@ export default {
         // 5.místnost - alchymista
         { 
             id: 21,
-            uvitani: '"Vítej vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Vítej, hledám nějakého učedníka, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
             otazka: 'kdo objevil Radium?"',
             odpovedi: [
                 'Albert Einstein',
@@ -282,12 +282,12 @@ export default {
                 'Stephen Hawking',
             ],
             spravna: 1,
-            reakceYes: '"Skvělé! Dost by se mi hodil učedník, co by mi nosil lektvary, popřemýšlej o tom."',
-            reakceNo: '"No jej! Ty to tu chceš vyhodit celé do povětří! Raději se odsud rychle kliď!"',
+            reakceYes: '"Skvělé! Dost by se mi hodil pomocník, co by mi nosil lektvary, popřemýšlej o tom."',
+            reakceNo: '"No, chce to ještě studovat, jinak bys mi to tu taky mohl vyhodit celé do povětří! Raději se odsud rychle kliď a na nic nesahej!"',
         },
         { 
             id: 22,
-            uvitani: '"Vítej vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Vítej, hledám nějakého učedníka, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
             otazka: 'z čeho se skládá atom?"',
             odpovedi: [
                 'Z jádra a obalu',
@@ -295,12 +295,12 @@ export default {
                 'Jen z jádra',
             ],
             spravna: 0,
-            reakceYes: '"Skvělé! Dost by se mi hodil učedník, co by mi nosil lektvary, popřemýšlej o tom."',
-            reakceNo: '"No jej! Ty to tu chceš vyhodit celé do povětří! Raději se odsud rychle kliď!"',
+            reakceYes: '"Skvělé! Dost by se mi hodil pomocník, co by mi nosil lektvary, popřemýšlej o tom."',
+            reakceNo: '"No, chce to ještě studovat, jinak bys mi to tu taky mohl vyhodit celé do povětří! Raději se odsud rychle kliď a na nic nesahej!"',
         },
         { 
             id: 23,
-            uvitani: '"Vítej vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Vítej, hledám nějakého učedníka, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
             otazka: 'jaká je chemická značka zlata?"',
             odpovedi: [
                 'Al',
@@ -308,25 +308,25 @@ export default {
                 'Au',
             ],
             spravna: 2,
-            reakceYes: '"Skvělé! Dost by se mi hodil učedník, co by mi nosil lektvary, popřemýšlej o tom."',
-            reakceNo: '"No jej! Ty to tu chceš vyhodit celé do povětří! Raději se odsud rychle kliď!"',
+            reakceYes: '"Skvělé! Dost by se mi hodil pomocník, co by mi nosil lektvary, popřemýšlej o tom."',
+            reakceNo: '"No, chce to ještě studovat, jinak bys mi to tu taky mohl vyhodit celé do povětří! Raději se odsud rychle kliď a na nic nesahej!"',
         },
         { 
             id: 24,
-            uvitani: '"Vítej vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
-            otazka: 'kdo vynalezl telefon?"',
+            uvitani: '"Vítej, hledám nějakého učedníka, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            otazka: 'jak obecně nazýváme sloučeninu se vzorcem H2O?"',
             odpovedi: [
-                'Thomas Alva Edison',
-                'Alexander Graham Bell',
-                'Nikola Tesla',
+                'Kyselina sírová',
+                'Voda',
+                'Methan',
             ],
             spravna: 1,
-            reakceYes: '"Skvělé! Dost by se mi hodil učedník, co by mi nosil lektvary, popřemýšlej o tom."',
-            reakceNo: '"No jej! Ty to tu chceš vyhodit celé do povětří! Raději se odsud rychle kliď!"',
+            reakceYes: '"Skvělé! Dost by se mi hodil pomocník, co by mi nosil lektvary, popřemýšlej o tom."',
+            reakceNo: '"No, chce to ještě studovat, jinak bys mi to tu taky mohl vyhodit celé do povětří! Raději se odsud rychle kliď a na nic nesahej!"',
         },
         { 
             id: 25,
-            uvitani: '"Vítej vítej, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
+            uvitani: '"Vítej, hledám nějakého učedníka, jistě ti nebude vadit, když si tě trochu prozkouším. Tak schválně, dokážeš mi říct, ',
             otazka: 'která planeta je největší?"',
             odpovedi: [
                 'Merkur',
@@ -334,8 +334,8 @@ export default {
                 'Jupiter',
             ],
             spravna: 2,
-            reakceYes: '"Skvělé! Dost by se mi hodil učedník, co by mi nosil lektvary, popřemýšlej o tom."',
-            reakceNo: '"No jej! Ty to tu chceš vyhodit celé do povětří! Raději se odsud rychle kliď!"',
+            reakceYes: '"Skvělé! Dost by se mi hodil pomocník, co by mi nosil lektvary, popřemýšlej o tom."',
+            reakceNo: '"No, chce to ještě studovat, jinak bys mi to tu taky mohl vyhodit celé do povětří! Raději se odsud rychle kliď a na nic nesahej!"',
         },
         // přidány další místnosti - možnost dalšího rozšíření...
         // místnost - prohra
@@ -347,35 +347,35 @@ export default {
         // místnost - výhra
         { 
             id: 27,
-            uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratuluji!',
-            nazev: 'Získal jsi: 1 penízek',
+            uvitani: 'Hurááá! Máš za sebou úspěšný průchod zapeklitými KOBKAMI VĚDĚNÍ! Gratuluji!',
+            nazev: 'Získal jsi 1 penízek',
             hodnoceni: 'Tvoje hodnost: Pasáček vepřů',
             popis: 'No, něco jsi věděl, ale žádná sláva to nebyla. Pokud to nezlepšíš, můžeš leda tak pást vepře. Život to není moc voňavý, ale zase je to práce ve stále mladém a dynamickém kolektivu!', 
         },
         {
             id: 28,
-            uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
-            nazev: 'Získal jsi: 2 penízky',
+            uvitani: 'Hurááá! Máš za sebou úspěšný průchod zapeklitými KOBKAMI VĚDĚNÍ! Gratuluji!',
+            nazev: 'Získal jsi 2 penízky',
             hodnoceni: 'Tvoje hodnost: Zbrojnoš',
-            popis: 'No hele, podívej, …řadový zbrojnoš nemusí být úplná bedna, přeci jen nasazování Španělských botiček na povozy není zas až tak náročné. Ale taky nemůže být úplný prosťáček, aby ho každý ošálil a utekl mu lecjaký zloduch, co se pokouší přijít do království ukrást princeznu nebo uhranout nějakou tu krávu. Nebo naopak. Mohlo by to být lepší, ale dva bodíky tě dostanou alespoň na tuto příčku.',
+            popis: 'No hele, podívej... řadový zbrojnoš nemusí být úplná bedna, přeci jen nasazování Španělských botiček na povozy není zas až tak náročné. Ale taky nemůže být úplný prosťáček, aby ho každý ošálil a utekl mu lecjaký zloduch, co se pokouší přijít do království ukrást princeznu nebo uhranout nějakou tu krávu. Nebo naopak. Mohlo by to být lepší, ale dva bodíky tě dostanou alespoň na tuto příčku.',
         },
         {    
             id: 29,
-            uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
+            uvitani: 'Hurááá! Máš za sebou úspěšný průchod zapeklitými KOBKAMI VĚDĚNÍ! Gratuluji!',
             nazev: 'Získal jsi 3 penízky',
             hodnoceni: 'Tvoje hodnost: Kupec',
             popis: 'Povolání kupce je trochu adrenalinový sport. Kde kdo se vás snaží oškubat a to jak ze zákazníků, tak od vrchnosti, a vy se musíte hodně otáčet, abyste neskončili chudí jako kostelní myš. Dobrý kupec musí být bystré mysli (nikoliv však Müsli) a orientovat se alespoň trochu v kde čem, aby mohl také s kde čím obchodovat. Teď už jen kde ten “Kdečem” sehnat a dobře na něm vydělat.',
         },
         {    
             id: 30,
-            uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
+            uvitani: 'Hurááá! Máš za sebou úspěšný průchod zapeklitými KOBKAMI VĚDĚNÍ! Gratuluji!',
             nazev: 'Získal jsi 4 penízky',
             hodnoceni: 'Tvoje hodnost: Rytíř',
             popis: 'Rytíř je velice odpovědná funkce. Kde kdo si jej představí jen jako přerostlou plechovku od guláše, co někde máchá mečem. Pche. Rytíř je královým prvním mužem, který nejen bojuje, ale obrací se na něj i královští poddaní, aby je rozsoudil nebo jim všelijak pomohl. A on by se toho měl pro krále zhostit, a to se ctí! Kdyby ne, mohl by taky skončit jak dlouhý, tak široký ve sběrných surovinách. Ale to tebe nečeká. Chyběl ti jen malý krůček k nejlepšímu výsledku, takže se s klidem můžeš počítat mezi vážené rytíře šišatého stolu. A to už něco znamená!',
         },
         {    
             id: 31,
-            uvitani: 'Hurááá! Máš za sebou úspěšný průchod KOBKAMA VĚDĚNÍ! Gratulujeme!',
+            uvitani: 'Hurááá! Máš za sebou úspěšný průchod zapeklitými KOBKAMI VĚDĚNÍ! Gratuluji!',
             nazev: 'Získal jsi 5 penízků',
             hodnoceni: 'Tvoje hodnost: Král',
             popis: 'Lepší už to být prostě nemůže. Král musí být moudrý, silný a znalý mnoha oborů, aby mohl svému království dobře vládnout. To vše jsi právě prokázal. Je vidět, že tě jen tak někdo nenachytá na švestkách a nemůže tě vodit za nos. Výborně! Ať žije král!',
