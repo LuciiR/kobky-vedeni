@@ -155,7 +155,6 @@ export default {
         this.bodiky.element.src = require(`./../assets/skore/bod${this.panacek.pocetBodu}.png`);
     },
 
-
     zmenMistnost() {
       if (this.aktualniMistnostIndex === 0) {
         this.navod.viditelne = false; 

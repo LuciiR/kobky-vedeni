@@ -371,7 +371,7 @@ export default {
             uvitani: 'Hurááá! Máš za sebou úspěšný průchod zapeklitými KOBKAMI VĚDĚNÍ! Gratuluji!',
             nazev: 'Získal jsi 4 penízky',
             hodnoceni: 'Tvoje hodnost: Rytíř',
-            popis: 'Rytíř je velice odpovědná funkce. Kde kdo si jej představí jen jako přerostlou plechovku od guláše, co někde máchá mečem. Pche. Rytíř je královým prvním mužem, který nejen bojuje, ale obrací se na něj i královští poddaní, aby je rozsoudil nebo jim všelijak pomohl. A on by se toho měl pro krále zhostit, a to se ctí! Kdyby ne, mohl by taky skončit jak dlouhý, tak široký ve sběrných surovinách. Ale to tebe nečeká. Chyběl ti jen malý krůček k nejlepšímu výsledku, takže se s klidem můžeš počítat mezi vážené rytíře šišatého stolu. A to už něco znamená!',
+            popis: 'Rytíř je velice odpovědná funkce. Kde kdo si jej představí jen jako přerostlou plechovku od guláše, co někde máchá mečem. Pche. Rytíř je královým prvním mužem, který nejen bojuje, ale obrací se na něj o pomoc i královští poddaní. A on by se toho měl pro krále zhostit, a to se ctí! Kdyby ne, mohl by skončit jak dlouhý, tak široký ve sběrných surovinách. Ale to tebe nečeká. Chyběl ti jen malý krůček k nejlepšímu výsledku, takže se s klidem můžeš počítat mezi vážené rytíře šišatého stolu. A to už něco znamená!',
         },
         {    
             id: 31,
