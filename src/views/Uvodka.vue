@@ -37,17 +37,17 @@ export default {
 .nazev {
     position: absolute;
     left: 324px;
-    top: 180px;
+    top: 179px;
     width: 432px;
-    height: 288px;
+    height: 289px;
 }
 
 .hrat {
    position: absolute;
    bottom: 36px;
    left: 468px;
-   width: 144px;
-   height: 73px;
+   width: 145px;
+   height: 74px;
 }
 
 .pozadi {
